@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - SN Guided Tours</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="antialiased">
+
+    <!-- Effect Container -->
+    <div id="effect-container"></div>
+
+    <!-- Header -->
+    <header class="bg-f7f9fb/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-serif font-bold text-[#4a69bd] interactive-element">SN</a>
+            <a href="index.html" class="text-lg nav-link interactive-element">← Back to Home</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container mx-auto px-6 py-16 md:py-24">
+            
+            <!-- Automatic Hero Slider -->
+            <div id="hero-slider-container" class="mb-16">
+                <div class="hero-slider">
+                    <div class="hero-slider-track">
+                        <!-- Slide 1 -->
+                        <div class="hero-slide">
+                            <a href="blog-post-1.html" class="block blog-hero interactive-element">
+                                <img src="https://images.unsplash.com/photo-1502602898657-3e91760c0341?q=80&w=2070&auto=format&fit=crop" alt="A charming street in Montmartre, Paris" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black opacity-50"></div>
+                                <div class="blog-hero-content">
+                                    <span class="text-sm font-bold uppercase tracking-widest">Featured Story</span>
+                                    <h1 class="text-3xl md:text-5xl font-serif font-bold mt-2 mb-4">A Guide to Private Walking Tours</h1>
+                                    <p class="text-lg opacity-90 hidden md:block">The best way to experience the City of Light...</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="hero-slide">
+                            <a href="#" class="block blog-hero interactive-element">
+                                <img src="https://images.unsplash.com/photo-1558005833-22380d1b3977?q=80&w=1974&auto=format&fit=crop" alt="The historic Pont Neuf bridge" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black opacity-50"></div>
+                                <div class="blog-hero-content">
+                                    <span class="text-sm font-bold uppercase tracking-widest">Coming Soon</span>
+                                    <h1 class="text-3xl md:text-5xl font-serif font-bold mt-2 mb-4">The Heart of Paris: Île de la Cité</h1>
+                                    <p class="text-lg opacity-90 hidden md:block">Explore the island where Paris was born...</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="hero-slide">
+                            <a href="#" class="block blog-hero interactive-element">
+                                <img src="https://images.unsplash.com/photo-1600421535839-81b24ce153d4?q=80&w=1935&auto=format&fit=crop" alt="The stunning stained glass windows of Sainte-Chapelle" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black opacity-50"></div>
+                                <div class="blog-hero-content">
+                                    <span class="text-sm font-bold uppercase tracking-widest">Coming Soon</span>
+                                    <h1 class="text-3xl md:text-5xl font-serif font-bold mt-2 mb-4">Inside a Jewel Box: Sainte-Chapelle</h1>
+                                    <p class="text-lg opacity-90 hidden md:block">Step into a world of breathtaking color and light...</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-12">
+                <!-- Main Blog List -->
+                <div class="lg:col-span-2 space-y-12">
+                     <div class="blog-list-item">
+                        <a href="blog-post-1.html" class="block w-full lg:w-1/3 flex-shrink-0 interactive-element">
+                            <img src="https://images.unsplash.com/photo-1502602898657-3e91760c0341?q=80&w=2070&auto=format&fit=crop" alt="A charming street in Montmartre, Paris" class="rounded-lg shadow-md w-full h-full object-cover">
+                        </a>
+                        <div>
+                            <h2 class="text-2xl font-serif font-bold mb-2"><a href="blog-post-1.html" class="hover:text-[#4a69bd] transition-colors">A Guide to Private Walking Tours in Paris</a></h2>
+                            <p class="text-gray-600">Discover why a private walking tour with an English-speaking guide is the best way to experience the City of Light, from skipping lines to hearing stories you won't find in guidebooks.</p>
+                        </div>
+                    </div>
+                    <div class="blog-list-item">
+                        <a href="#" class="block w-full lg:w-1/3 flex-shrink-0 interactive-element">
+                            <img src="https://images.unsplash.com/photo-1558005833-22380d1b3977?q=80&w=1974&auto=format&fit=crop" alt="The historic Pont Neuf bridge" class="rounded-lg shadow-md w-full h-full object-cover">
+                        </a>
+                        <div>
+                            <h2 class="text-2xl font-serif font-bold mb-2"><a href="#" class="hover:text-[#4a69bd] transition-colors">The Heart of Paris: A Walk Through Île de la Cité</a></h2>
+                            <p class="text-gray-600">Explore the island where Paris was born. We'll uncover the secrets of its ancient streets, from the Conciergerie to the charming Place Dauphine. (Full post coming soon!)</p>
+                        </div>
+                    </div>
+                    <div class="blog-list-item">
+                        <a href="#" class="block w-full lg:w-1/3 flex-shrink-0 interactive-element">
+                            <img src="https://images.unsplash.com/photo-1600421535839-81b24ce153d4?q=80&w=1935&auto=format&fit=crop" alt="The stunning stained glass windows of Sainte-Chapelle" class="rounded-lg shadow-md w-full h-full object-cover">
+                        </a>
+                        <div>
+                            <h2 class="text-2xl font-serif font-bold mb-2"><a href="#" class="hover:text-[#4a69bd] transition-colors">Inside a Jewel Box: The Stained Glass of Sainte-Chapelle</a></h2>
+                            <p class="text-gray-600">Step into a world of breathtaking color and light. Learn the stories told within the 1,113 panes of stained glass in this Gothic masterpiece. (Full post coming soon!)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="lg:col-span-1">
+                    <div class="sticky top-28">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="font-serif text-2xl font-bold mb-4">Keep Exploring</h3>
+                            <ul class="space-y-3">
+                                <li><a href="#" class="flex items-center gap-4 group">
+                                    <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=80&w=400" alt="Eiffel Tower" class="w-16 h-16 object-cover rounded-md">
+                                    <span class="font-semibold group-hover:text-[#4a69bd] transition-colors">7 Unusual Facts About the Eiffel Tower</span>
+                                </a></li>
+                                <li><a href="#" class="flex items-center gap-4 group">
+                                    <img src="https://images.unsplash.com/photo-1532345236140-373565ba4235?q=80&w=400" alt="Louvre Museum" class="w-16 h-16 object-cover rounded-md">
+                                    <span class="font-semibold group-hover:text-[#4a69bd] transition-colors">How to Visit the Louvre Without the Crowds</span>
+                                </a></li>
+                                <li><a href="#" class="flex items-center gap-4 group">
+                                    <img src="https://images.unsplash.com/photo-1543297245-3bdd39779383?q=80&w=400" alt="Parisian bakery" class="w-16 h-16 object-cover rounded-md">
+                                    <span class="font-semibold group-hover:text-[#4a69bd] transition-colors">Top Neighborhoods for Food in Paris</span>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a202c] text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-2xl font-serif mb-4">SN Guided Tours</p>
+            <p>&copy; 2025 SN Guided Tours. All rights reserved.</p>
+            <p>Crafted with ❤️ in Paris.</p>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

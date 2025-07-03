@@ -1,0 +1,340 @@
+/* SN Guided Tours - Main Stylesheet */
+
+/* General Body and Font Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f9fb; /* Light blue-gray background */
+    color: #1a202c; /* Dark navy text */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    /* Custom Baguette Cursor */
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 100 100"><g transform="rotate(45 50 50)"><path fill="%23D2B48C" d="M20,50 C20,40 80,40 80,50 C80,60 20,60 20,50 Z" /><path stroke="%23A0522D" stroke-width="4" fill="none" d="M30 45 L40 55 M45 45 L55 55 M60 45 L70 55" /></g></svg>'), auto;
+}
+
+.interactive-element:hover {
+    cursor: pointer; /* Use standard pointer for clickable items for best practice */
+}
+
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Mouse Trail and Firework Effects */
+.trail-particle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fade-out 1s forwards;
+    z-index: 9999;
+}
+
+@keyframes fade-out {
+    to {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+.firework-particle {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 1;
+}
+
+@keyframes firework-anim {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--translateX), var(--translateY)) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Navigation Link Styles */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4a69bd; /* Medium blue accent */
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #4a69bd; /* Medium blue */
+    color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: #6a89cc;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Styles */
+.card {
+    background-color: #fff;
+    border: 1px solid #e2e8f0; /* Light gray border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(74, 105, 189, 0.1);
+}
+
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex-grow: 1;
+}
+
+/* Modal Styles */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 90%;
+    width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.modal-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-backdrop.active .modal-content {
+    transform: scale(1);
+}
+
+/* Blog Post Specific Styles */
+.article-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.875rem; /* 30px */
+    line-height: 2.25rem; /* 36px */
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.article-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.article-content p, .article-content li {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+}
+
+.article-content ul {
+    list-style-position: inside;
+    list-style-type: disc;
+}
+
+/* Review Slider Styles */
+.review-card {
+    flex: 0 0 90%; /* On mobile, one card takes up 90% of the view */
+    width: 90%;
+    margin-left: 1rem;
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.review-card:first-child {
+    margin-left: 0;
+}
+
+@media (min-width: 768px) {
+    .review-card {
+        flex-basis: 45%; /* 2 cards visible on medium screens */
+        width: 45%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .review-card {
+        flex-basis: 31%; /* ~3 cards visible on large screens */
+        width: 31%;
+    }
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1a202c;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.slider-arrow:hover {
+    background-color: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Featured Blog Post Styles (Homepage) */
+.featured-blog-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.featured-blog-image-link {
+    display: block;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+.featured-blog-image-link:hover {
+    transform: scale(1.03);
+}
+
+.featured-blog-content {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .featured-blog-card {
+        flex-direction: row;
+        gap: 2.5rem;
+    }
+    .featured-blog-card:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    .featured-blog-image-link {
+        width: 40%;
+        flex-shrink: 0;
+    }
+    .featured-blog-content {
+        width: 60%;
+    }
+}
+
+/* Blog Index Page Styles */
+.blog-hero {
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.blog-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.blog-list-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+@media (min-width: 768px) {
+    .blog-list-item {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+/* Automatic Hero Slider Styles */
+#hero-slider-container {
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 30px rgba(74, 105, 189, 0.1);
+}
+
+.hero-slider {
+    width: 100%;
+}
+
+.hero-slider-track {
+    display: flex;
+    /* The animation will be set by JS based on the number of slides */
+}
+
+.hero-slider:hover .hero-slider-track {
+    animation-play-state: paused;
+}
+
+.hero-slide {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+@keyframes scroll-animation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* This will be calculated by JS */
+        transform: translateX(-50%); 
+    }
+}
