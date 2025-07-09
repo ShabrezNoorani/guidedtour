@@ -6,38 +6,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // This check ensures the script doesn't throw errors on pages without the container.
     if (effectContainer) {
-        // --- Improved Mouse Trail Effect ---
+        // --- UPDATED: Baguette Crumb Trail Effect ---
         let mouseMoveTimer;
+        
+        // Array of different crumb SVGs for variety
+        const crumbSVGs = [
+            // Small circle crumb
+            `<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#D2B48C"/></svg>`,
+            // Small oval crumb
+            `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 100 60"><ellipse cx="50" cy="30" rx="50" ry="30" fill="#F3E5AB"/></svg>`,
+            // Small jagged crumb
+            `<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 100 100"><path d="M10 10 L90 20 L80 90 L20 80 Z" fill="#E4C59E"/></svg>`
+        ];
 
         document.addEventListener('mousemove', e => {
+            // Throttling the effect to avoid too many crumbs
             cancelAnimationFrame(mouseMoveTimer);
             mouseMoveTimer = requestAnimationFrame(() => {
-                createTrailParticle(e.pageX, e.pageY);
+                createBaguetteCrumb(e.pageX, e.pageY);
             });
         });
 
-        function createTrailParticle(x, y) {
-            const particle = document.createElement('div');
-            particle.className = 'trail-particle';
-            effectContainer.appendChild(particle);
+        function createBaguetteCrumb(x, y) {
+            const crumb = document.createElement('div');
+            crumb.className = 'baguette-crumb';
+            // Randomly select a crumb shape
+            crumb.innerHTML = crumbSVGs[Math.floor(Math.random() * crumbSVGs.length)];
+            effectContainer.appendChild(crumb);
 
-            // Golden color for the trail
-            particle.style.background = 'radial-gradient(circle, rgba(255,223,100,0.8) 0%, rgba(255,215,0,0) 70%)';
+            // Positioning the crumb to appear slightly behind and offset from the cursor
+            crumb.style.left = `${x - 5}px`;
+            crumb.style.top = `${y - 5}px`;
 
-            particle.style.left = `${x}px`;
-            particle.style.top = `${y}px`;
+            const randomRotate = (Math.random() - 0.5) * 480;
+            const randomScale = Math.random() * 0.4 + 0.2; // smaller crumbs
+            const randomTranslateX = (Math.random() - 0.5) * 80;
+            const randomTranslateY = Math.random() * 50 + 20; // make it fall down more
 
-            const size = Math.random() * 15 + 5;
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            
-            const offsetX = (Math.random() - 0.5) * 20;
-            const offsetY = (Math.random() - 0.5) * 20;
-            particle.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            // Set the final state for the animation
+            crumb.style.setProperty('--transform-end', `translate(${randomTranslateX}px, ${randomTranslateY}px) rotate(${randomRotate}deg) scale(${randomScale})`);
 
             setTimeout(() => {
-                particle.remove();
-            }, 1000);
+                crumb.remove();
+            }, 1200); // Remove after animation finishes
         }
 
         // --- Firework Effect on Hover ---
@@ -231,4 +242,53 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- NEW: Promotion Logic ---
+    function handlePromotions() {
+        const tourCards = document.querySelectorAll('.tour-card');
+
+        tourCards.forEach(card => {
+            const originalPrice = parseFloat(card.dataset.originalPrice);
+            const discountEuros = parseFloat(card.dataset.discountEuros);
+
+            // Proceed only if there is a valid discount greater than 0
+            if (originalPrice && discountEuros && discountEuros > 0) {
+                // 1. Calculations
+                const newPrice = originalPrice - discountEuros;
+                const discountPercentage = Math.round((discountEuros / originalPrice) * 100);
+
+                // 2. Update Banner
+                const banner = card.querySelector('.discount-banner');
+                if (banner) {
+                    banner.textContent = `${discountPercentage}% OFF`;
+                    banner.classList.remove('hidden');
+                }
+
+                // 3. Update Price Display
+                const priceContainer = card.querySelector('.price-display');
+                if (priceContainer) {
+                    // Clear the existing price (which shows the original price by default)
+                    priceContainer.innerHTML = '';
+
+                    // Create and add the original, struck-out price
+                    const originalPriceElement = document.createElement('span');
+                    originalPriceElement.className = 'original-price';
+                    originalPriceElement.textContent = `€${originalPrice}`;
+                    priceContainer.appendChild(originalPriceElement);
+
+                    // Create and add the new, discounted price
+                    const newPriceElement = document.createElement('span');
+                    newPriceElement.className = 'text-2xl font-bold text-[#4a69bd]'; // Use existing styles
+                    newPriceElement.innerHTML = `€${newPrice} <span class="text-base font-normal">/ person</span>`;
+                    priceContainer.appendChild(newPriceElement);
+                    
+                    priceContainer.classList.add('has-discount');
+                }
+            }
+        });
+    }
+
+    // Run the promotion logic on page load
+    handlePromotions();
+
 });

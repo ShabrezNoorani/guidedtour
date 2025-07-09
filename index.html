@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SN Guided Tours - Outside Walking Tour of Notre Dame</title>
+    <title>Scenic Zest - Paris Walking Tours</title>
+    <link rel="canonical" href="https://sceniczest.com/index.html" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="antialiased">
 
-    <!-- Effect Container -->
     <div id="effect-container"></div>
 
-    <!-- Header -->
     <header class="bg-f7f9fb/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-serif font-bold text-[#4a69bd] interactive-element">SN</a>
+            <a href="index.html" class="interactive-element">
+                <img src="assets/img/logo.svg" alt="Scenic Zest Logo" class="h-10">
+            </a>
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#tours" class="text-lg nav-link interactive-element">Tours</a>
                 <a href="#why-us" class="text-lg nav-link interactive-element">Why Us</a>
@@ -31,7 +31,6 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
         </nav>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="#tours" class="block py-2 text-lg interactive-element">Tours</a>
             <a href="#why-us" class="block py-2 text-lg interactive-element">Why Us</a>
@@ -41,9 +40,7 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
         <section class="relative h-[70vh] min-h-[500px] flex items-center justify-center text-white text-center px-4">
             <div class="absolute inset-0 bg-black opacity-50"></div>
             <img src="https://images.unsplash.com/photo-1556422428-b23f5f34354b?q=80&w=2070&auto=format&fit=crop" 
@@ -55,35 +52,52 @@
             </div>
         </section>
 
-        <!-- Tours Section -->
         <section id="tours" class="py-20 md:py-28">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-serif text-center mb-12">Our Guided Tours</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Tour Card -->
-                    <div class="card rounded-lg overflow-hidden shadow-lg">
+                    
+                    <div class="card rounded-lg overflow-hidden shadow-lg tour-card relative" data-original-price="65" data-discount-euros="20">
+                        <div class="discount-banner hidden"></div>
                         <img src="https://images.unsplash.com/photo-1590157953733-35a034a72773?q=80&w=1974&auto=format&fit=crop" 
                              onerror="this.onerror=null;this.src='https://placehold.co/600x400/a0522d/FFFFFF?text=Tour+Image';"
                              alt="Gargoyle overlooking Paris from Notre Dame" class="w-full h-56 object-cover">
                         <div class="p-6 card-content">
                             <div class="card-body">
-                                <h3 class="text-2xl font-serif mb-2">Outside Walking Tour: Notre Dame</h3>
-                                <p class="text-gray-700 mb-4">Explore the magnificent exterior of the cathedral, learn about its history, survival, and the ongoing restoration. A tale of resilience and beauty.</p>
+                                <h3 class="text-2xl font-serif mb-2">Private Outside Notre Dame Walking Tour</h3>
+                                <p class="text-gray-700 mb-4">An exclusive tour for you and your group. Explore the magnificent exterior of the cathedral at your own pace.</p>
                             </div>
                             <div class="flex justify-between items-center mb-6 mt-auto">
                                 <span class="text-lg font-medium">~90 Mins</span>
-                                <span class="text-2xl font-bold text-[#4a69bd]">€35</span>
+                                <div class="price-display text-right">
+                                    <span class="text-2xl font-bold text-[#4a69bd]">€65 <span class="text-base font-normal">/ person</span></span>
+                                </div>
                             </div>
                             <button class="w-full py-3 rounded-lg btn-primary open-modal-button interactive-element">Book Now</button>
                         </div>
                     </div>
-                    <!-- Coming Soon Cards -->
-                    <div class="card rounded-lg overflow-hidden flex flex-col items-center justify-center p-6 text-center bg-gray-50 border-2 border-dashed border-gray-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6a89cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mb-4"><path d="M12 20v-6M12 8V2"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m4.93 19.07 4.24-4.24"/><path d="M2 12h6"/><path d="M16 12h6"/></svg>
-                        <h3 class="text-2xl font-serif mb-2">New Tours Coming Soon</h3>
-                        <p class="text-gray-500">We're crafting more magical Parisian experiences. Stay tuned!</p>
+
+                    <div class="card rounded-lg overflow-hidden shadow-lg tour-card relative" data-original-price="30" data-discount-euros="15">
+                        <div class="discount-banner hidden"></div>
+                        <img src="https://images.unsplash.com/photo-1518629235436-52787f152d22?q=80&w=1974&auto=format&fit=crop" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/a0522d/FFFFFF?text=Tour+Image';"
+                             alt="A group of tourists near Notre Dame" class="w-full h-56 object-cover">
+                        <div class="p-6 card-content">
+                            <div class="card-body">
+                                <h3 class="text-2xl font-serif mb-2">Group Outside Notre Dame Walking Tour</h3>
+                                <p class="text-gray-700 mb-4">Join a small group (max 13 adults) to discover the history and beauty of the cathedral's exterior.</p>
+                            </div>
+                            <div class="flex justify-between items-center mb-6 mt-auto">
+                                <span class="text-lg font-medium">~90 Mins</span>
+                                <div class="price-display text-right">
+                                    <span class="text-2xl font-bold text-[#4a69bd]">€30 <span class="text-base font-normal">/ person</span></span>
+                                </div>
+                            </div>
+                            <button class="w-full py-3 rounded-lg btn-primary open-modal-button interactive-element">Book Now</button>
+                        </div>
                     </div>
-                    <div class="card rounded-lg overflow-hidden hidden md:flex flex-col items-center justify-center p-6 text-center bg-gray-50 border-2 border-dashed border-gray-300">
+
+                    <div class="card rounded-lg overflow-hidden flex flex-col items-center justify-center p-6 text-center bg-gray-50 border-2 border-dashed border-gray-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6a89cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mb-4"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
                         <h3 class="text-2xl font-serif mb-2">More Adventures Await</h3>
                         <p class="text-gray-500">Get ready to explore more of Paris's hidden gems with us.</p>
@@ -92,10 +106,9 @@
             </div>
         </section>
 
-        <!-- Why Us Section -->
         <section id="why-us" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-serif text-center mb-16">Why Walk With SN Tours?</h2>
+                <h2 class="text-3xl md:text-4xl font-serif text-center mb-16">Why Walk With Scenic Zest?</h2>
                 <div class="grid md:grid-cols-3 gap-12 text-center">
                     <div class="flex flex-col items-center">
                         <div class="flex items-center justify-center h-20 w-20 rounded-full bg-[#eef2f7] mb-4 border-2 border-[#dae1e7]">
@@ -122,14 +135,12 @@
             </div>
         </section>
 
-        <!-- Reviews Section -->
         <section id="reviews" class="py-20 md:py-28 overflow-hidden">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-serif text-center mb-12">Hear From Fellow Travelers</h2>
                 <div class="relative">
                     <div id="reviews-slider" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 cursor-grab" style="scrollbar-width: none; -ms-overflow-style: none;">
                         <style>#reviews-slider::-webkit-scrollbar { display: none; }</style>
-                        <!-- Review Cards -->
                         <div class="review-card snap-center">
                             <div class="flex text-yellow-400 mb-2">★★★★★</div>
                             <blockquote class="text-gray-700 italic mb-4 flex-grow">"This was an incredible and worthwhile tour. Sz was truly an amazing guide and made this tour so memorable for us! He was so knowledgeable and enthusiastic..."</blockquote>
@@ -150,16 +161,6 @@
                             <blockquote class="text-gray-700 italic mb-4 flex-grow">"Our guide SZ was very enthusiastic and knowledgeable. He made sure to engage with the whole group. No question was left unanswered! Top notch, it was a lot of fun despite the heat."</blockquote>
                             <div class="text-right mt-auto pt-4"><p class="font-bold text-[#4a69bd]">- Elke</p><p class="text-sm text-gray-500">June 2025</p></div>
                         </div>
-                        <div class="review-card snap-center">
-                            <div class="flex text-yellow-400 mb-2">★★★★★</div>
-                            <blockquote class="text-gray-700 italic mb-4 flex-grow">"SZ was our guide. He is able to convey the historical facts about the cathedral in a memorable way. We learned so much... Highly recommend!"</blockquote>
-                            <div class="text-right mt-auto pt-4"><p class="font-bold text-[#4a69bd]">- Richie L.</p><p class="text-sm text-gray-500">June 2025</p></div>
-                        </div>
-                        <div class="review-card snap-center">
-                            <div class="flex text-yellow-400 mb-2">★★★★★</div>
-                            <blockquote class="text-gray-700 italic mb-4 flex-grow">"Sz was our guide and he was wonderful! He was detailed, knowledgeable and very friendly and informative. He was very accommodating... I would highly recommend this tour!!!"</blockquote>
-                            <div class="text-right mt-auto pt-4"><p class="font-bold text-[#4a69bd]">- Karen B.</p><p class="text-sm text-gray-500">June 2025</p></div>
-                        </div>
                     </div>
                     <button id="prev-review" class="slider-arrow left-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg></button>
                     <button id="next-review" class="slider-arrow right-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></button>
@@ -167,12 +168,10 @@
             </div>
         </section>
 
-        <!-- Blog Section -->
         <section id="blog" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-serif text-center mb-16">From Our Blog</h2>
                 <div class="space-y-16 max-w-5xl mx-auto">
-                    <!-- Blog Post 1 -->
                     <div class="featured-blog-card">
                         <a href="blog-post-1.html" class="featured-blog-image-link interactive-element">
                             <img src="https://images.unsplash.com/photo-1590157953733-35a034a72773?q=80&w=1974&auto=format&fit=crop" 
@@ -185,7 +184,6 @@
                             <a href="blog-post-1.html" class="inline-block py-2 px-6 rounded-lg btn-primary interactive-element">Read More</a>
                         </div>
                     </div>
-                    <!-- Blog Post 2 (Placeholder) -->
                     <div class="featured-blog-card">
                         <a href="#" class="featured-blog-image-link interactive-element">
                             <img src="https://images.unsplash.com/photo-1558005833-22380d1b3977?q=80&w=1974&auto=format&fit=crop" 
@@ -198,7 +196,6 @@
                             <a href="#" class="inline-block py-2 px-6 rounded-lg btn-primary interactive-element opacity-50 cursor-not-allowed">Read More</a>
                         </div>
                     </div>
-                    <!-- Blog Post 3 (Placeholder) -->
                     <div class="featured-blog-card">
                         <a href="#" class="featured-blog-image-link interactive-element">
                             <img src="https://images.unsplash.com/photo-1600421535839-81b24ce153d4?q=80&w=1935&auto=format&fit=crop" 
@@ -218,10 +215,9 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="py-20 md:py-28">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-serif text-center mb-12">Book Your Tour or Say Hello</h2>
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-serif mb-12">Book Your Tour or Say Hello</h2>
                 <form class="max-w-xl mx-auto">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                         <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#6a89cc]">
@@ -230,20 +226,19 @@
                     <textarea placeholder="Your Message (e.g., number of people, desired date)" rows="5" class="w-full p-3 rounded-lg border border-gray-300 mb-6 focus:outline-none focus:ring-2 focus:ring-[#6a89cc]"></textarea>
                     <button type="submit" class="w-full py-3 rounded-lg btn-primary interactive-element">Send Message</button>
                 </form>
+                 <p class="mt-8 text-gray-600">Or email us directly at <a href="mailto:admin@sceniczest.com" class="text-[#4a69bd] hover:underline">admin@sceniczest.com</a></p>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-[#1a202c] text-white py-12">
         <div class="container mx-auto px-6 text-center">
-            <p class="text-2xl font-serif mb-4">SN Guided Tours</p>
-            <p>&copy; 2025 SN Guided Tours. All rights reserved.</p>
+            <p class="text-2xl font-serif mb-4">Scenic Zest</p>
+            <p>&copy; 2025 Scenic Zest. All rights reserved.</p>
             <p>Crafted with ❤️ in Paris.</p>
         </div>
     </footer>
     
-    <!-- Consent Modal -->
     <div id="consent-modal" class="modal-backdrop">
         <div class="modal-content">
             <div class="flex justify-between items-center mb-4">
@@ -255,7 +250,7 @@
                 <ul class="list-disc list-inside space-y-2">
                     <li><strong>Nature of Tour:</strong> This is a walking tour conducted entirely outdoors. Please dress appropriately for the weather and wear comfortable shoes.</li>
                     <li><strong>Health & Fitness:</strong> Participants should be in good health and able to walk for approximately 90 minutes at a moderate pace.</li>
-                    <li><strong>Liability:</strong> SN Guided Tours and its guides are not liable for any personal injury, loss, or damage to property during the tour. Participants are responsible for their own safety and belongings.</li>
+                    <li><strong>Liability:</strong> Scenic Zest and its guides are not liable for any personal injury, loss, or damage to property during the tour. Participants are responsible for their own safety and belongings.</li>
                     <li><strong>Cancellations:</strong> Cancellations made 24 hours before the tour start time will receive a full refund. No refunds for later cancellations or no-shows.</li>
                     <li><strong>Photography:</strong> We may take photos for promotional purposes. Please inform your guide if you do not wish to be photographed.</li>
                 </ul>

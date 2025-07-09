@@ -6,8 +6,8 @@ body {
     background-color: #f7f9fb; /* Light blue-gray background */
     color: #1a202c; /* Dark navy text */
     overflow-x: hidden; /* Prevent horizontal scroll */
-    /* Custom Baguette Cursor */
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 100 100"><g transform="rotate(45 50 50)"><path fill="%23D2B48C" d="M20,50 C20,40 80,40 80,50 C80,60 20,60 20,50 Z" /><path stroke="%23A0522D" stroke-width="4" fill="none" d="M30 45 L40 55 M45 45 L55 55 M60 45 L70 55" /></g></svg>'), auto;
+    /* UPDATED: Custom Baguette Cursor with correct hotspot for clicking */
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 100 100"><g transform="rotate(45 50 50)"><path fill="%23D2B48C" d="M20,50 C20,40 80,40 80,50 C80,60 20,60 20,50 Z" /><path stroke="%23A0522D" stroke-width="4" fill="none" d="M30 45 L40 55 M45 45 L55 55 M60 45 L70 55" /></g></svg>'), 2 2, auto;
 }
 
 .interactive-element:hover {
@@ -18,22 +18,27 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
-/* Mouse Trail and Firework Effects */
-.trail-particle {
+/* UPDATED: Baguette Crumb Trail Effect */
+.baguette-crumb {
     position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-    animation: fade-out 1s forwards;
-    z-index: 9999;
+    pointer-events: none; /* This is the most important fix: makes the crumbs un-clickable */
+    animation: fade-out-tumble 1.2s forwards ease-out;
+    z-index: 9998; /* Places trail above content, but below fireworks */
 }
 
-@keyframes fade-out {
+@keyframes fade-out-tumble {
+    from {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
     to {
         opacity: 0;
-        transform: scale(0.5);
+        /* The final transform state is set by JavaScript for randomness */
+        transform: var(--transform-end);
     }
 }
 
+/* Firework Particle Style */
 .firework-particle {
     position: fixed;
     border-radius: 50%;
@@ -337,4 +342,36 @@ body {
         /* This will be calculated by JS */
         transform: translateX(-50%); 
     }
+}
+
+/* --- NEW PROMOTION STYLES --- */
+
+/* Promotional Banner Style */
+.discount-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #e53e3e; /* A strong red color */
+    color: white;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 700;
+    padding: 0.25rem 0.75rem; /* 4px 12px */
+    border-bottom-right-radius: 0.5rem; /* Rounded corner */
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Strikethrough style for original price */
+.original-price {
+    font-size: 1rem; /* 16px */
+    color: #718096; /* A muted gray */
+    text-decoration: line-through;
+    margin-right: 0.5rem; /* 8px space */
+}
+
+/* Helper to align prices nicely */
+.price-display.has-discount {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
 }
