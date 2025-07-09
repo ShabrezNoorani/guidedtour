@@ -351,8 +351,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #e53e3e; /* A strong red color */
-    color: white;
+    background-color: #e3e700; /* A strong red color */
+    color: rgb(64, 28, 223);
     font-size: 0.875rem; /* 14px */
     font-weight: 700;
     padding: 0.25rem 0.75rem; /* 4px 12px */
