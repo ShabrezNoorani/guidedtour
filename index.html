@@ -2,7 +2,11 @@
 <html lang="en">
 
 <head>
+    <!-- Start cookieyes banner -->
     <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/829dc699f6300ebb0b5a7ef6/script.js"></script>
+    <!-- End cookieyes banner -->
+
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-82HHK3T0FW"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -14,7 +18,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="assets/img/fevicon3636.png">
+    <link rel="icon" type="image/png" href="assets/img/feviconw36.png">
     <title>Scenic Zest - Paris Walking Tours</title>
     <link rel="canonical" href="https://sceniczest.com/index.html" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -319,37 +323,51 @@
                 </div>
             </div>
         </section>
-
-        <section id="contact" class="py-20 md:py-28">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-serif mb-12">Book Your Tour or Say Hello</h2>
-                <form id="contact-form" action="https://formspree.io/f/meokyqdg" method="POST" class="max-w-xl mx-auto">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <input type="text" name="name" placeholder="Your Name" required
-                            class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#6a89cc]">
-                        <input type="email" name="email" placeholder="Your Email" required
-                            class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#6a89cc]">
-                    </div>
-                    <textarea name="message" placeholder="Your Message (e.g., number of people, desired date)" rows="5" required
-                        class="w-full p-3 rounded-lg border border-gray-300 mb-6 focus:outline-none focus:ring-2 focus:ring-[#6a89cc]"></textarea>
-                    <button type="submit" class="w-full py-3 rounded-lg btn-primary interactive-element">Send
-                        Message</button>
-                    <div id="form-status" class="mt-4 text-center font-medium"></div>
-                </form>
-                <p class="mt-8 text-gray-600">Or email us directly at <a href="mailto:admin@sceniczest.com"
-                        class="text-[#4a69bd] hover:underline">admin@sceniczest.com</a></p>
-            </div>
-        </section>
     </main>
 
-    <footer class="bg-[#1a202c] text-white py-12">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-2xl font-serif mb-4">Scenic Zest</p>
-            <p>&copy; 2025 Scenic Zest. All rights reserved.</p>
-            <p>Crafted with ❤️ in Paris.</p>
+    <footer id="contact" class="bg-[#1a202c] text-white py-16 md:py-20">
+        <div class="container mx-auto px-6">
+            <div class="footer-grid">
+                <!-- Left Column: Logo, Links -->
+                <div class="footer-left">
+                    <img src="assets/img/logo-white.svg" alt="Scenic Zest Logo" class="footer-logo mb-6">
+                    <h3 class="font-serif text-xl text-gray-300 mb-4">Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="#tours" class="interactive-element">Tours</a>
+                        <a href="#why-us" class="interactive-element">Why Us</a>
+                        <a href="#reviews" class="interactive-element">Reviews</a>
+                        <a href="blog.html" class="interactive-element">Blog</a>
+                        <a href="#" id="work-with-us-button" class="interactive-element">Want to work with us?</a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Contact Form -->
+                <div class="footer-right">
+                     <h2 class="text-3xl md:text-4xl font-serif mb-8 text-white">Book a Tour or Say Hello</h2>
+                     <form id="contact-form" action="https://formspree.io/f/meokyqdg" method="POST">
+                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                             <input type="text" name="name" placeholder="Your Name" required class="form-input">
+                             <input type="email" name="email" placeholder="Your Email" required class="form-input">
+                         </div>
+                         <textarea name="message" placeholder="Your Message (e.g., number of people, desired date)" rows="5" required class="form-input mb-6"></textarea>
+                         <button type="submit" class="w-full py-3 rounded-lg btn-primary interactive-element">Send Message</button>
+                         <div id="form-status" class="mt-4 text-center font-medium h-6"></div>
+                     </form>
+                     <p class="mt-6 text-sm text-gray-400">
+                        Or contact us directly:<br>
+                        <a href="mailto:admin@sceniczest.com" class="text-[#6a89cc] hover:underline">admin@sceniczest.com</a>
+                        <span class="mx-2">|</span>
+                        <a href="tel:+33755091524" class="text-[#6a89cc] hover:underline">+33 7 55 09 15 24</a>
+                     </p>
+                </div>
+            </div>
+            <div class="text-center border-t border-gray-700 pt-8 mt-12">
+                 <p class="text-sm text-gray-500">&copy; 2025 Scenic Zest. All rights reserved. Crafted with ❤️ in Paris.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Existing Consent Modal -->
     <div id="consent-modal" class="modal-backdrop">
         <div class="modal-content">
             <div class="flex justify-between items-center mb-4">
@@ -381,6 +399,28 @@
                     onclick="alert('Thank you for your booking! We will contact you shortly to confirm.')">I Agree &
                     Proceed</button>
             </div>
+        </div>
+    </div>
+
+    <!-- NEW "WORK WITH US" MODAL -->
+    <div id="work-with-us-modal" class="modal-backdrop">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-serif">Work With Us</h2>
+                <button class="close-work-modal-button text-2xl font-bold interactive-element">&times;</button>
+            </div>
+            <p class="text-sm text-gray-600 mb-4">Interested in becoming a guide for Scenic Zest? Tell us a bit about yourself!</p>
+            <form id="work-with-us-form" action="https://formspree.io/f/mdkzqkkv" method="POST">
+                <div class="space-y-4">
+                    <input type="text" name="name" placeholder="Your Full Name" required class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#6a89cc]">
+                    <input type="email" name="email" placeholder="Your Email Address" required class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#6a89cc]">
+                    <textarea name="experience" placeholder="Tell us about your guiding experience and languages spoken..." rows="5" required class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#6a89cc]"></textarea>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button type="submit" class="py-2 px-6 rounded-lg btn-primary interactive-element">Submit Application</button>
+                </div>
+                <div id="work-form-status" class="mt-4 text-center font-medium h-6"></div>
+            </form>
         </div>
     </div>
 

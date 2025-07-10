@@ -234,43 +234,94 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     handlePromotions();
 
-    // --- Formspree AJAX Form Submission ---
+    // --- Formspree AJAX Form Submission (Main Contact Form) ---
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Stop the default redirect
-
+            event.preventDefault();
             const formData = new FormData(contactForm);
-            
             fetch(contactForm.action, {
                 method: 'POST',
                 body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                    // Success!
                     formStatus.innerHTML = "Thank you! Your message has been sent.";
                     formStatus.style.color = 'green';
-                    contactForm.reset(); // Clear the form fields
+                    contactForm.reset();
                 } else {
-                    // Error!
                     response.json().then(data => {
-                      if (Object.hasOwn(data, 'errors')) {
-                        formStatus.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-                      } else {
-                        formStatus.innerHTML = "Oops! There was a problem submitting your form.";
-                      }
-                      formStatus.style.color = 'red';
+                        if (Object.hasOwn(data, 'errors')) {
+                            formStatus.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                        } else {
+                            formStatus.innerHTML = "Oops! There was a problem submitting your form.";
+                        }
+                        formStatus.style.color = 'red';
                     })
                 }
             }).catch(error => {
-                // Network error!
-                formStatus.innerHTML = "Oops! There was a network problem submitting your form.";
+                formStatus.innerHTML = "Oops! There was a network problem.";
                 formStatus.style.color = 'red';
+            });
+        });
+    }
+
+    // --- "Work With Us" Modal Logic ---
+    const workWithUsModal = document.getElementById('work-with-us-modal');
+    if(workWithUsModal) {
+        const openWorkModalButton = document.getElementById('work-with-us-button');
+        const closeWorkModalButtons = workWithUsModal.querySelectorAll('.close-work-modal-button');
+
+        openWorkModalButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            workWithUsModal.classList.add('active');
+        });
+
+        closeWorkModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                workWithUsModal.classList.remove('active');
+            });
+        });
+        
+        workWithUsModal.addEventListener('click', (e) => {
+            if (e.target === workWithUsModal) {
+                 workWithUsModal.classList.remove('active');
+            }
+        });
+    }
+
+    // --- "Work With Us" Formspree AJAX Submission ---
+    const workForm = document.getElementById('work-with-us-form');
+    const workFormStatus = document.getElementById('work-form-status');
+
+    if (workForm) {
+        workForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(workForm);
+            fetch(workForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    workFormStatus.innerHTML = "Thank you! Your application has been sent.";
+                    workFormStatus.style.color = 'green';
+                    workForm.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            workFormStatus.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            workFormStatus.innerHTML = "Oops! There was a problem submitting your application.";
+                        }
+                        workFormStatus.style.color = 'red';
+                    });
+                }
+            }).catch(error => {
+                workFormStatus.innerHTML = "Oops! There was a network problem.";
+                workFormStatus.style.color = 'red';
             });
         });
     }

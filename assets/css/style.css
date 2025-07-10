@@ -6,7 +6,6 @@ body {
     background-color: #f7f9fb; /* Light blue-gray background */
     color: #1a202c; /* Dark navy text */
     overflow-x: hidden; /* Prevent horizontal scroll */
-    /* UPDATED: Custom Baguette Cursor with correct hotspot for clicking */
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 100 100"><g transform="rotate(45 50 50)"><path fill="%23D2B48C" d="M20,50 C20,40 80,40 80,50 C80,60 20,60 20,50 Z" /><path stroke="%23A0522D" stroke-width="4" fill="none" d="M30 45 L40 55 M45 45 L55 55 M60 45 L70 55" /></g></svg>'), 2 2, auto;
 }
 
@@ -18,12 +17,12 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
-/* UPDATED: Baguette Crumb Trail Effect */
+/* Baguette Crumb Trail Effect */
 .baguette-crumb {
     position: absolute;
-    pointer-events: none; /* This is the most important fix: makes the crumbs un-clickable */
+    pointer-events: none;
     animation: fade-out-tumble 1.2s forwards ease-out;
-    z-index: 9998; /* Places trail above content, but below fireworks */
+    z-index: 9998;
 }
 
 @keyframes fade-out-tumble {
@@ -33,7 +32,6 @@ body {
     }
     to {
         opacity: 0;
-        /* The final transform state is set by JavaScript for randomness */
         transform: var(--transform-end);
     }
 }
@@ -72,7 +70,7 @@ body {
     bottom: -4px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #4a69bd; /* Medium blue accent */
+    background-color: #4a69bd;
     transition: width 0.3s ease;
 }
 
@@ -82,7 +80,7 @@ body {
 
 /* Button Styles */
 .btn-primary {
-    background-color: #4a69bd; /* Medium blue */
+    background-color: #4a69bd;
     color: #ffffff;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -97,7 +95,7 @@ body {
 /* Card Styles */
 .card {
     background-color: #fff;
-    border: 1px solid #e2e8f0; /* Light gray border */
+    border: 1px solid #e2e8f0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -159,22 +157,22 @@ body {
 /* Blog Post Specific Styles */
 .article-content h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.875rem; /* 30px */
-    line-height: 2.25rem; /* 36px */
+    font-size: 1.875rem;
+    line-height: 2.25rem;
     margin-top: 2.5rem;
     margin-bottom: 1rem;
 }
 
 .article-content h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem; /* 24px */
-    line-height: 2rem; /* 32px */
+    font-size: 1.5rem;
+    line-height: 2rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
 .article-content p, .article-content li {
-    font-size: 1.125rem; /* 18px */
+    font-size: 1.125rem;
     line-height: 1.75;
     margin-bottom: 1.5rem;
 }
@@ -186,7 +184,7 @@ body {
 
 /* Review Slider Styles */
 .review-card {
-    flex: 0 0 90%; /* On mobile, one card takes up 90% of the view */
+    flex: 0 0 90%;
     width: 90%;
     margin-left: 1rem;
     background-color: #fff;
@@ -202,14 +200,14 @@ body {
 
 @media (min-width: 768px) {
     .review-card {
-        flex-basis: 45%; /* 2 cards visible on medium screens */
+        flex-basis: 45%;
         width: 45%;
     }
 }
 
 @media (min-width: 1024px) {
     .review-card {
-        flex-basis: 31%; /* ~3 cards visible on large screens */
+        flex-basis: 31%;
         width: 31%;
     }
 }
@@ -322,7 +320,6 @@ body {
 
 .hero-slider-track {
     display: flex;
-    /* The animation will be set by JS based on the number of slides */
 }
 
 .hero-slider:hover .hero-slider-track {
@@ -339,39 +336,90 @@ body {
         transform: translateX(0);
     }
     100% {
-        /* This will be calculated by JS */
         transform: translateX(-50%); 
     }
 }
 
-/* --- NEW PROMOTION STYLES --- */
-
-/* Promotional Banner Style */
+/* Promotion Styles */
 .discount-banner {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #e3e700; /* A strong red color */
+    background-color: #e3e700;
     color: rgb(64, 28, 223);
-    font-size: 0.875rem; /* 14px */
+    font-size: 0.875rem;
     font-weight: 700;
-    padding: 0.25rem 0.75rem; /* 4px 12px */
-    border-bottom-right-radius: 0.5rem; /* Rounded corner */
+    padding: 0.25rem 0.75rem;
+    border-bottom-right-radius: 0.5rem;
     z-index: 10;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Strikethrough style for original price */
 .original-price {
-    font-size: 1rem; /* 16px */
-    color: #718096; /* A muted gray */
+    font-size: 1rem;
+    color: #718096;
     text-decoration: line-through;
-    margin-right: 0.5rem; /* 8px space */
+    margin-right: 0.5rem;
 }
 
-/* Helper to align prices nicely */
 .price-display.has-discount {
     display: flex;
     align-items: baseline;
     justify-content: flex-end;
+}
+
+/* --- NEW FOOTER STYLES --- */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 3rem;
+    text-align: left;
+}
+
+@media (min-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1.5fr; /* Two columns on large screens */
+        gap: 4rem;
+    }
+}
+
+.footer-logo {
+    max-width: 150px; /* Control the size of the "big logo" */
+    height: auto;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 1.5rem;
+}
+
+.footer-links a {
+    color: #cbd5e1; /* Lighter text color for links */
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #4a5568;
+    background-color: #2d3748;
+    color: #ffffff;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-input::placeholder {
+    color: #a0aec0;
+}
+
+.form-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #6a89cc;
+    border-color: #6a89cc;
 }
