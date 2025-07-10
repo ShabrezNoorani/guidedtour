@@ -13,7 +13,7 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/img/fevicon3636.png">
     <title>Scenic Zest - Paris Walking Tours</title>
     <link rel="canonical" href="https://sceniczest.com/index.html" />
@@ -64,14 +64,15 @@
     <main>
         <section class="relative h-[70vh] min-h-[500px] flex items-center justify-center text-white text-center px-4">
             <div class="absolute inset-0 bg-black opacity-70"></div>
-            <img src="assets/img/notredamebg.svg"
-                onerror="this.onerror=null;this.src='https://placehold.co/1200x800/663399/FFFFFF?text=Notre+Dame';"
-                alt="Notre Dame Cathedral at sunset" class="absolute inset-0 w-full h-full object-cover">
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="assets/img/Seine_Sunrise_Video_Ready.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <div class="relative z-10">
                 <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4 tracking-wider text-shadow-heavy">Discover the Soul of Paris
                 </h1>
-                <p class="text-lg md:text-xl max-w-2xl mx-auto text-shadow-heavy">Join our exclusive walking tour and unravel the timeless
-                    stories etched into the stones of Notre Dame.</p>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto text-shadow-heavy"><strong>Join our exclusive walking tour and unravel the timeless
+                    stories etched into the stones of Notre Dame.</strong></p>
             </div>
         </section>
 
@@ -82,7 +83,7 @@
                     <div class="card rounded-lg overflow-hidden shadow-lg tour-card relative" data-original-price="65"
                         data-discount-euros="25">
                         <div class="discount-banner hidden"></div>
-                        <img src="https://images.unsplash.com/photo-1590157953733-35a034a72773?q=80&w=1974&auto=format&fit=crop"
+                        <img src="assets/img/private.png"
                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/a0522d/FFFFFF?text=Tour+Image';"
                             alt="Gargoyle overlooking Paris from Notre Dame" class="w-full h-56 object-cover">
                         <div class="p-6 card-content">
@@ -106,7 +107,7 @@
                     <div class="card rounded-lg overflow-hidden shadow-lg tour-card relative" data-original-price="30"
                         data-discount-euros="15">
                         <div class="discount-banner hidden"></div>
-                        <img src="https://images.unsplash.com/photo-1518629235436-52787f152d22?q=80&w=1974&auto=format&fit=crop"
+                        <img src="assets/img/group.png"
                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/a0522d/FFFFFF?text=Tour+Image';"
                             alt="A group of tourists near Notre Dame" class="w-full h-56 object-cover">
                         <div class="p-6 card-content">
@@ -433,3 +434,6 @@
 </body>
 
 </html>
+The video plays but after one time it does not load again.. 
+also there is no need to make the text bold Join our exclusive walking tour and unravel the timeless
+                    stories etched into the stones of Notre Dame.</strong> make it as it was before
