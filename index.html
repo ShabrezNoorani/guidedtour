@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/829dc699f6300ebb0b5a7ef6/script.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-82HHK3T0FW"></script>
@@ -14,7 +13,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="assets/img/fevicon3636.png">
+    <link rel="icon" type="image/png" href="assets/img/feviconw36.png">
     <title>Scenic Zest - Paris Walking Tours</title>
     <link rel="canonical" href="https://sceniczest.com/index.html" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,16 +24,14 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body class="antialiased">
 
     <div id="effect-container"></div>
 
     <header class="bg-f7f9fb/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-x-3 interactive-element">
+            <a href="index.html" class="interactive-element">
                 <img src="assets/img/logo.svg" alt="Scenic Zest Logo" class="h-10">
-                <span class="font-serif font-bold text-2xl text-[#4a69bd]">Scenic Zest</span>
             </a>
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#tours" class="text-lg nav-link interactive-element">Tours</a>
@@ -323,14 +320,14 @@
         <section id="contact" class="py-20 md:py-28">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-serif mb-12">Book Your Tour or Say Hello</h2>
-                <form class="max-w-xl mx-auto">
+                <form action="https://formspree.io/f/meokyqdg" method="POST" class="max-w-xl mx-auto">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <input type="text" placeholder="Your Name"
+                        <input type="text" name="name" placeholder="Your Name" required
                             class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#6a89cc]">
-                        <input type="email" placeholder="Your Email"
+                        <input type="email" name="email" placeholder="Your Email" required
                             class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#6a89cc]">
                     </div>
-                    <textarea placeholder="Your Message (e.g., number of people, desired date)" rows="5"
+                    <textarea name="message" placeholder="Your Message (e.g., number of people, desired date)" rows="5" required
                         class="w-full p-3 rounded-lg border border-gray-300 mb-6 focus:outline-none focus:ring-2 focus:ring-[#6a89cc]"></textarea>
                     <button type="submit" class="w-full py-3 rounded-lg btn-primary interactive-element">Send
                         Message</button>
