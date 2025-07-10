@@ -13,6 +13,13 @@ body {
     cursor: pointer; /* Use standard pointer for clickable items for best practice */
 }
 
+/* NEW: Prevents text selection cursor from appearing on interactive elements */
+.interactive-element {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+}
+
 .font-serif {
     font-family: 'Playfair Display', serif;
 }
@@ -368,42 +375,7 @@ body {
     justify-content: flex-end;
 }
 
-/* --- NEW FOOTER STYLES --- */
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column on mobile */
-    gap: 3rem;
-    text-align: left;
-}
-
-@media (min-width: 1024px) {
-    .footer-grid {
-        grid-template-columns: 1fr 1.5fr; /* Two columns on large screens */
-        gap: 4rem;
-    }
-}
-
-.footer-logo {
-    max-width: 150px; /* Control the size of the "big logo" */
-    height: auto;
-}
-
-.footer-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem 1.5rem;
-}
-
-.footer-links a {
-    color: #cbd5e1; /* Lighter text color for links */
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-
+/* Footer Form Input Styles */
 .form-input {
     width: 100%;
     padding: 0.75rem;
