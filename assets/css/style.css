@@ -6,7 +6,7 @@ body {
     background-color: #f7f9fb; /* Light blue-gray background */
     color: #1a202c; /* Dark navy text */
     overflow-x: hidden; /* Prevent horizontal scroll */
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 100 100"><g transform="rotate(45 50 50)"><path fill="%23D2B48C" d="M20,50 C20,40 80,40 80,50 C80,60 20,60 20,50 Z" /><path stroke="%23A0522D" stroke-width="4" fill="none" d="M30 45 L40 55 M45 45 L55 55 M60 45 L70 55" /></g></svg>'), 2 2, auto;
+    cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDEwMCAxMDAiPjxnIHRyYW5zZm9ybT0icm90YXRlKDQ1IDUwIDUwKSI+PHBhdGggZmlsbD0iI0QyQjQ4QyIgZD0iTTIwLDUwIEMyMCw0MCA4MCw0MCA4MCw1MCBDODAsNjAgMjAsNjAgMjAsNTAgWiIgLz48cGF0aCBzdHJva2U9IiNBMDUyMkQiIHN0cm9rZS13aWR0aD0iNCIgZmlsbD0ibm9uZSIgZD0iTTMwIDQ1IEw0MCA1NSBNNDUgNDUgTDU1IDU1IE02MCA0NSBMNzAgNTUiIC8+PC9nPjwvc3ZnPg=='), 2 2, auto;
 }
 
 .interactive-element:hover {
