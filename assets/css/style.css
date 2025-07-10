@@ -13,7 +13,6 @@ body {
     cursor: pointer; /* Use standard pointer for clickable items for best practice */
 }
 
-/* NEW: Prevents text selection cursor from appearing on interactive elements */
 .interactive-element {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10+ */
@@ -22,6 +21,11 @@ body {
 
 .font-serif {
     font-family: 'Playfair Display', serif;
+}
+
+/* Custom Text Utilities */
+.text-shadow-heavy {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 /* Baguette Crumb Trail Effect */
