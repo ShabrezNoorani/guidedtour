@@ -12,11 +12,7 @@
   <lastmod>2025-07-11T14:28:51+00:00</lastmod>
   <priority>1.00</priority>
 </url>
-<url>
-  <loc>https://www.sceniczest.com/index.html</loc>
-  <lastmod>2025-07-11T14:28:51+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+<!-- CHANGE: Removed the duplicate URL block for index.html -->
 <url>
   <loc>https://www.sceniczest.com/blog.html</loc>
   <lastmod>2025-07-11T14:28:51+00:00</lastmod>
