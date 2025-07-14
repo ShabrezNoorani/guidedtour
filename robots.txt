@@ -1,0 +1,8 @@
+# Instructions for all web crawlers
+User-agent: *
+
+# Allow all crawlers to access all content
+Allow: /
+
+# Location of the sitemap file
+Sitemap: https://www.sceniczest.com/sitemap.xml
