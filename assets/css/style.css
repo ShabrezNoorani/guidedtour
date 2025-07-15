@@ -399,3 +399,56 @@ body {
     box-shadow: 0 0 0 2px #6a89cc;
     border-color: #6a89cc;
 }
+
+/* CHANGE: Added Rotating Banner Animation */
+.rotating-banner {
+    animation: rotate-banner 4s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+
+@keyframes rotate-banner {
+    0% {
+        transform: perspective(500px) rotateY(-4deg);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        transform: perspective(500px) rotateY(4deg);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        transform: perspective(500px) rotateY(-4deg);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* CHANGE: Refactored Bokun Button Styles */
+#bokun_ddac3360_b6ce_498e_ac1a_b5ac3206f5cf,
+#bokun_e99b5111_1d6e_4986_bbef_778cd5b6d5a1 {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background: #4a69bd;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+#bokun_ddac3360_b6ce_498e_ac1a_b5ac3206f5cf:hover,
+#bokun_e99b5111_1d6e_4986_bbef_778cd5b6d5a1:hover {
+    background: #6a89cc;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 105, 189, 0.2);
+}
+
+#bokun_ddac3360_b6ce_498e_ac1a_b5ac3206f5cf:active,
+#bokun_e99b5111_1d6e_4986_bbef_778cd5b6d5a1:active {
+    background: #39539b;
+    transform: translateY(0);
+}
