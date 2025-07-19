@@ -105,7 +105,7 @@
                                     </p>
                                     <p class="text-center text-sm mt-1">Book directly & use code <strong class="bg-white px-1.5 py-0.5 rounded text-amber-600 tracking-wider">PRIVATE46</strong></p>
                                 </div>
-                                </div>
+                            </div>
                             <div class="flex justify-between items-center mb-6 mt-auto">
                                 <span class="text-lg font-medium">1 hr</span>
                                 <div class="price-display text-right">
@@ -113,12 +113,19 @@
                                             class="text-base font-normal">/ person</span></span>
                                 </div>
                             </div>
-                            <script type="text/javascript"
-                                src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=9468be75-021b-4e0a-befb-fa17ddb6e389"
-                                async></script>
-                            <button class="bokunButton" disabled id=bokun_ddac3360_b6ce_498e_ac1a_b5ac3206f5cf
-                                data-src="https://widgets.bokun.io/online-sales/9468be75-021b-4e0a-befb-fa17ddb6e389/experience/1057128?partialView=1"
-                                data-testid="widget-book-button"> Book now </button>
+                            <button class="open-custom-modal w-full py-2.5 rounded-lg btn-primary interactive-element select-none"
+                                data-tour-type="private"
+                                data-bokun-target-id="bokun_ddac3360_b6ce_498e_ac1a_b5ac3206f5cf">
+                                Book now
+                            </button>
+                            <div hidden>
+                                <script type="text/javascript"
+                                    src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=9468be75-021b-4e0a-befb-fa17ddb6e389"
+                                    async></script>
+                                <button class="bokunButton" disabled id="bokun_ddac3360_b6ce_498e_ac1a_b5ac3206f5cf"
+                                    data-src="https://widgets.bokun.io/online-sales/9468be75-021b-4e0a-befb-fa17ddb6e389/experience/1057128?partialView=1"
+                                    data-testid="widget-book-button"> Book now </button>
+                            </div>
                         </div>
                     </div>
 
@@ -143,7 +150,7 @@
                                     </p>
                                     <p class="text-center text-sm mt-1">Book directly & use code <strong class="bg-white px-1.5 py-0.5 rounded text-amber-600 tracking-wider">FLAT27</strong></p>
                                 </div>
-                                </div>
+                            </div>
                             <div class="flex justify-between items-center mb-6 mt-auto">
                                 <span class="text-lg font-medium">1 hr</span>
                                 <div class="price-display text-right">
@@ -151,12 +158,19 @@
                                             class="text-base font-normal">/ person</span></span>
                                 </div>
                             </div>
-                            <script type="text/javascript"
-                                src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=9468be75-021b-4e0a-befb-fa17ddb6e389"
-                                async></script>
-                            <button class="bokunButton" disabled id=bokun_e99b5111_1d6e_4986_bbef_778cd5b6d5a1
-                                data-src="https://widgets.bokun.io/online-sales/9468be75-021b-4e0a-befb-fa17ddb6e389/experience/1057016?partialView=1"
-                                data-testid="widget-book-button"> Book now </button>
+                            <button class="open-custom-modal w-full py-2.5 rounded-lg btn-primary interactive-element select-none"
+                                data-tour-type="group"
+                                data-bokun-target-id="bokun_e99b5111_1d6e_4986_bbef_778cd5b6d5a1">
+                                Book now
+                            </button>
+                            <div hidden>
+                                <script type="text/javascript"
+                                    src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=9468be75-021b-4e0a-befb-fa17ddb6e389"
+                                    async></script>
+                                <button class="bokunButton" disabled id="bokun_e99b5111_1d6e_4986_bbef_778cd5b6d5a1"
+                                    data-src="https://widgets.bokun.io/online-sales/9468be75-021b-4e0a-befb-fa17ddb6e389/experience/1057016?partialView=1"
+                                    data-testid="widget-book-button"> Book now </button>
+                            </div>
                         </div>
                     </div>
 
@@ -477,27 +491,13 @@
     <div id="consent-modal" class="modal-backdrop">
         <div class="modal-content">
             <div class="flex justify-between items-center mb-4">
-                <h2 class="text-2xl font-serif">Tour Consent & Information</h2>
+                <h2 id="modal-title" class="text-2xl font-serif">Tour Consent & Information</h2>
                 <button class="close-modal-button text-2xl font-bold interactive-element select-none">×</button>
             </div>
             <div class="text-sm text-gray-700 space-y-3">
                 <p>By booking this tour, you acknowledge and agree to the following terms:</p>
-                <ul class="list-disc list-inside space-y-2">
-                    <li><strong>Nature of Tour:</strong> This is a walking tour conducted entirely outdoors. Please
-                        dress appropriately for the weather and wear comfortable shoes.</li>
-                    <li><strong>Health & Fitness:</strong> Participants should be in good health and able to walk
-                        for
-                        approximately 60 minutes at a moderate pace.</li>
-                    <li><strong>Liability:</strong> Scenic Zest and its guides are not liable for any personal
-                        injury,
-                        loss, or damage to property during the tour. Participants are responsible for their own
-                        safety
-                        and belongings.</li>
-                    <li><strong>Cancellations:</strong> Cancellations made 24 hours before the tour start time will
-                        receive a full refund. No refunds for later cancellations or no-shows.</li>
-                    <li><strong>Photography:</strong> We may take photos for promotional purposes. Please inform your
-                        guide if you do not wish to be photographed.</li>
-                </ul>
+                <ul id="modal-points" class="list-disc list-inside space-y-2">
+                    </ul>
                 <p class="font-bold mt-4">Thank you for your understanding. We can't wait to show you the magic of
                     Notre
                     Dame!</p>
@@ -505,10 +505,7 @@
             <div class="mt-6 flex justify-end space-x-4">
                 <button
                     class="close-modal-button py-2 px-6 rounded-lg bg-gray-200 hover:bg-gray-300 transition interactive-element select-none">Close</button>
-                <button class="py-2 px-6 rounded-lg btn-primary interactive-element select-none"
-                    onclick="alert('Thank you for your booking! We will contact you shortly to confirm.')">I Agree
-                    &
-                    Proceed</button>
+                <button id="modal-proceed-booking" class="py-2 px-6 rounded-lg btn-primary interactive-element select-none">I Agree & Proceed</button>
             </div>
         </div>
     </div>

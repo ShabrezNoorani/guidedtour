@@ -87,27 +87,86 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Modal Logic ---
+    // --- CHANGE: Updated Custom Modal Logic for New Booking Flow ---
     const consentModal = document.getElementById('consent-modal');
-    if(consentModal) {
-        const openModalButtons = document.querySelectorAll('.open-modal-button');
+    if (consentModal) {
+        const tourDetails = {
+            private: {
+                title: 'Private Tour Information & Consent',
+                points: [
+                    '<strong>Nature of Tour:</strong> This is an exclusive private walking tour for your group only. The pace is set by you.',
+                    '<strong>Health & Fitness:</strong> Participants should be in good health and able to walk for approximately 60 minutes.',
+                    '<strong>Liability:</strong> Scenic Zest and its guides are not liable for any personal injury or loss of property. Participants are responsible for their own safety.',
+                    '<strong>Cancellations:</strong> Cancellations made 48 hours before the tour start time will receive a full refund. No refunds for later cancellations or no-shows.',
+                    '<strong>Photography:</strong> We may take photos for promotional purposes. Please inform your guide if you do not wish to be photographed.'
+                ]
+            },
+            group: {
+                title: 'Group Tour Information & Consent',
+                points: [
+                    '<strong>Nature of Tour:</strong> This is a walking tour with a small group of up to 10 adults. The guide will set a moderate pace for the group.',
+                    '<strong>Health & Fitness:</strong> Participants should be in good health and able to walk for approximately 60 minutes at a moderate pace.',
+                    '<strong>Liability:</strong> Scenic Zest and its guides are not liable for any personal injury or loss of property. Participants are responsible for their own safety.',
+                    '<strong>Cancellations:</strong> Cancellations made 24 hours before the tour start time will receive a full refund. No refunds for later cancellations or no-shows.',
+                    '<strong>Photography:</strong> We may take photos for promotional purposes. Please inform your guide if you do not wish to be photographed.'
+                ]
+            }
+        };
+
+        const openModalButtons = document.querySelectorAll('.open-custom-modal');
         const closeModalButtons = document.querySelectorAll('.close-modal-button');
+        const modalTitle = document.getElementById('modal-title');
+        const modalPoints = document.getElementById('modal-points');
+        const proceedBookingButton = document.getElementById('modal-proceed-booking');
+
+        // When a "Book now" button is clicked...
         openModalButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                consentModal.classList.add('active');
+            button.addEventListener('click', (e) => {
+                const tourType = button.dataset.tourType;
+                const bokunTargetId = button.dataset.bokunTargetId;
+                const details = tourDetails[tourType];
+
+                if (details && bokunTargetId) {
+                    // 1. Populate the modal with the correct content
+                    modalTitle.textContent = details.title;
+                    modalPoints.innerHTML = details.points.map(point => `<li>${point}</li>`).join('');
+                    
+                    // 2. Pass the hidden Bokun button's ID to the 'I Agree' button
+                    proceedBookingButton.dataset.bokunTargetId = bokunTargetId;
+
+                    // 3. Show the modal
+                    consentModal.classList.add('active');
+                }
             });
         });
+
+        // When "I Agree & Proceed" is clicked...
+        proceedBookingButton.addEventListener('click', () => {
+            const bokunTargetId = proceedBookingButton.dataset.bokunTargetId;
+            if (bokunTargetId) {
+                const hiddenBokunButton = document.getElementById(bokunTargetId);
+                if (hiddenBokunButton) {
+                    // Click the real, hidden Bokun button to trigger the widget
+                    hiddenBokunButton.click();
+                }
+                // Close the modal
+                consentModal.classList.remove('active');
+            }
+        });
+
         closeModalButtons.forEach(button => {
             button.addEventListener('click', () => {
                 consentModal.classList.remove('active');
             });
         });
+
         consentModal.addEventListener('click', (e) => {
             if (e.target === consentModal) {
-                 consentModal.classList.remove('active');
+                consentModal.classList.remove('active');
             }
         });
     }
+
 
     // --- Reviews Slider Logic ---
     const reviewsSlider = document.getElementById('reviews-slider');
@@ -264,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }).catch(error => {
                 formStatus.innerHTML = "Oops! There was a network problem.";
                 formStatus.style.color = 'red';
-            });
+});
         });
     }
 
