@@ -87,17 +87,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- CHANGE: Updated Custom Modal Logic for New Booking Flow ---
+    // --- Custom Modal Logic for New Booking Flow ---
     const consentModal = document.getElementById('consent-modal');
     if (consentModal) {
+        // CHANGE: Updated tour details with new cancellation policy and discount info.
         const tourDetails = {
             private: {
                 title: 'Private Tour Information & Consent',
                 points: [
                     '<strong>Nature of Tour:</strong> This is an exclusive private walking tour for your group only. The pace is set by you.',
                     '<strong>Health & Fitness:</strong> Participants should be in good health and able to walk for approximately 60 minutes.',
+                    '<strong>Discount Alert:</strong> The promotional price shown is available only when you book directly and use the discount code at checkout.',
+                    '<strong>Cancellations:</strong> Cancellations made 24 hours before the tour start time will receive a full refund. No refunds for later cancellations or no-shows.',
                     '<strong>Liability:</strong> Scenic Zest and its guides are not liable for any personal injury or loss of property. Participants are responsible for their own safety.',
-                    '<strong>Cancellations:</strong> Cancellations made 48 hours before the tour start time will receive a full refund. No refunds for later cancellations or no-shows.',
                     '<strong>Photography:</strong> We may take photos for promotional purposes. Please inform your guide if you do not wish to be photographed.'
                 ]
             },
@@ -106,8 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 points: [
                     '<strong>Nature of Tour:</strong> This is a walking tour with a small group of up to 10 adults. The guide will set a moderate pace for the group.',
                     '<strong>Health & Fitness:</strong> Participants should be in good health and able to walk for approximately 60 minutes at a moderate pace.',
-                    '<strong>Liability:</strong> Scenic Zest and its guides are not liable for any personal injury or loss of property. Participants are responsible for their own safety.',
+                    '<strong>Discount Alert:</strong> The promotional price shown is available only when you book directly and use the discount code at checkout.',
                     '<strong>Cancellations:</strong> Cancellations made 24 hours before the tour start time will receive a full refund. No refunds for later cancellations or no-shows.',
+                    '<strong>Liability:</strong> Scenic Zest and its guides are not liable for any personal injury or loss of property. Participants are responsible for their own safety.',
                     '<strong>Photography:</strong> We may take photos for promotional purposes. Please inform your guide if you do not wish to be photographed.'
                 ]
             }
