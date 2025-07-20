@@ -429,22 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // --- Page-Specific JS for blog-post-2.html (Sainte-Chapelle) ---
-    if (document.querySelector('.window-panel')) {
-        const windowPanels = document.querySelectorAll('.window-panel');
-        const windowTitle = document.getElementById('window-title');
-        const windowDescription = document.getElementById('window-description');
-        const windowDescBox = document.getElementById('window-description-box');
-        windowPanels.forEach(panel => {
-            panel.addEventListener('click', () => {
-                windowTitle.textContent = panel.dataset.title;
-                windowDescription.textContent = panel.dataset.desc;
-                windowDescBox.style.backgroundColor = panel.dataset.color || 'white';
-            });
-        });
-    }
-
-    // --- Page-Specific JS for blog-post-1.html (Île de la Cité) ---
+    // --- Page-Specific JS for blog-post-1.html (Île de la Cité) & blog-post-2.html (Sainte-Chapelle) ---
     if (document.querySelector('.landmark-panel')) {
         const landmarkPanels = document.querySelectorAll('.landmark-panel');
         const landmarkTitle = document.getElementById('landmark-title');
@@ -459,7 +444,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Shared JS for Interactive Blog Posts ---
+    if (document.querySelector('.window-panel')) {
+        const windowPanels = document.querySelectorAll('.window-panel');
+        const windowTitle = document.getElementById('window-title');
+        const windowDescription = document.getElementById('window-description');
+        const windowDescBox = document.getElementById('window-description-box');
+        windowPanels.forEach(panel => {
+            panel.addEventListener('click', () => {
+                windowTitle.textContent = panel.dataset.title;
+                windowDescription.textContent = panel.dataset.desc;
+                windowDescBox.style.backgroundColor = panel.dataset.color || 'white';
+            });
+        });
+    }
+
+    // --- Shared JS for Interactive Blog Posts (Accordions and Filters) ---
     if (document.querySelector('.accordion-item')) {
         const accordionItems = document.querySelectorAll('.accordion-item');
         accordionItems.forEach(item => {
@@ -480,7 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (document.querySelector('.filter-btn')) {
+    if (document.querySelector('.filter-btn') && document.querySelector('.restaurant-card')) {
         const filterBtns = document.querySelectorAll('.filter-btn');
         const restaurantCards = document.querySelectorAll('.restaurant-card');
         filterBtns.forEach(btn => {
@@ -489,12 +488,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.classList.add('active');
                 const filter = btn.dataset.filter;
                 restaurantCards.forEach(card => {
-                    card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
+                    card.style.display = 'none'; // Hide all first
+                    if (filter === 'all' || card.dataset.category.includes(filter)) {
+                         card.style.display = 'block'; // Then show matching
+                    }
                 });
             });
         });
     }
-
+    
+    // --- Shared Timeline Animation for Blog Posts ---
     if (document.querySelector('.timeline-item')) {
         const timelineItems = document.querySelectorAll('.timeline-item');
         const observer = new IntersectionObserver((entries) => {
@@ -507,5 +510,161 @@ document.addEventListener('DOMContentLoaded', () => {
         timelineItems.forEach(item => {
             observer.observe(item);
         });
+    }
+
+    // --- Page-Specific JS for blog-post-3.html (Notre Dame Guide) ---
+    if (document.getElementById('construction-chart')) {
+
+        const architectureData = {
+            towers: { title: 'The North & South Towers', text: 'Completed around 1250, the two towers stand 69 meters (226 feet) tall. The South Tower houses the cathedral\'s largest bell, Emmanuel. For centuries, they were the tallest structures in Paris.' },
+            rose: { title: 'The Rose Windows', text: 'Notre-Dame features three spectacular rose windows. The North and South windows are among the largest in the world, at 13 meters in diameter, depicting Old and New Testament scenes in vibrant stained glass.' },
+            portals: { title: 'The Three Portals', text: 'The western facade features three grand portals. The central Portal of the Last Judgment depicts Christ deciding the fate of humanity. The left is the Portal of the Virgin, and the right is the Portal of St. Anne.' },
+            gallery: { title: 'The Gallery of Kings', text: 'This row of 28 statues represents the kings of Judah. The original 13th-century figures were torn down during the French Revolution, mistaken for kings of France. The current statues are 19th-century reproductions.' },
+            buttresses: { title: 'Flying Buttresses', text: 'Notre-Dame was one of the first buildings to use flying buttresses. These arched exterior supports were a revolutionary innovation, allowing for higher walls and larger windows by transferring the roof\'s weight outwards.' }
+        };
+
+        const landmarkData = {
+            'sainte-chapelle': { title: 'Sainte-Chapelle', text: 'A jewel of Gothic architecture, built by King Louis IX in the 1240s to house Christ\'s Crown of Thorns. It features one of the most extensive 13th-century stained-glass collections in the world.' },
+            'conciergerie': { title: 'The Conciergerie', text: 'Part of the former royal palace, it became a notorious prison during the French Revolution. Its most famous prisoner was Marie Antoinette, who was held here before her execution.' },
+            'pont-neuf': { title: 'Pont Neuf', text: 'Despite its name meaning "New Bridge," this is the oldest standing bridge across the river Seine in Paris. Completed in 1607, it was unique for its time, with sidewalks and no houses built on it.' },
+            'notre-dame-map': { title: 'Notre-Dame Cathedral', text: 'The spiritual and geographical heart of the island and the city of Paris. Its construction began in 1163 and represents the pinnacle of French Gothic architecture.' }
+        };
+
+        const restaurantData = [
+            { name: "Le Vieux Bistro", type: "Classic French dining experience with traditional dishes like coq au vin and boeuf bourguignon.", category: "french" },
+            { name: "Café Saint-Michel", type: "A charming spot for coffee, croissants, and people-watching, with views towards the river.", category: "cafe" },
+            { name: "Crêperie du Parvis", type: "Serving delicious sweet and savory crêpes, perfect for a quick and satisfying meal.", category: "quick" },
+            { name: "La Rôtisserie Ancienne", type: "Known for its succulent roast chicken and potatoes, a simple yet profound taste of France.", category: "french" },
+            { name: "Le Scribe Pâtissier", type: "Exquisite pastries, macarons, and éclairs. A must-visit for anyone with a sweet tooth.", category: "cafe" },
+            { name: "Baguette Express", type: "Freshly made sandwiches with classic fillings on crusty baguettes. Ideal for a lunch on the go.", category: "quick" },
+            { name: "Auberge de la Cité", type: "An elegant restaurant offering modern interpretations of French regional cuisine.", category: "french" }
+        ];
+
+        const faqData = [
+            { question: "How old is Notre-Dame?", answer: "Construction began in 1163 and was largely completed by 1345, making the core structure nearly 860 years old." },
+            { question: "When will Notre-Dame reopen after the fire?", answer: "The cathedral is scheduled to reopen to the public and for worship in December 2024, following a massive five-year restoration project." },
+            { question: "Is it free to enter Notre-Dame?", answer: "Yes, before the fire, entry to the main cathedral was free of charge. Access to the towers and crypt required a ticket. This policy is expected to continue upon reopening." },
+            { question: "What are the most important relics at Notre-Dame?", answer: "The cathedral housed priceless relics, all of which were saved from the fire. The most famous are the Crown of Thorns, a fragment of the True Cross, and one of the Holy Nails." },
+            { question: "What does 'Notre Dame' mean?", answer: "In French, 'Notre Dame' translates to 'Our Lady,' a reference to the Virgin Mary, to whom the cathedral is dedicated." }
+        ];
+
+        // Architecture Explorer
+        const archInfoTitle = document.getElementById('info-title');
+        const archInfoText = document.getElementById('info-text');
+        document.querySelectorAll('[data-feature]').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const feature = e.currentTarget.dataset.feature;
+                archInfoTitle.textContent = architectureData[feature].title;
+                archInfoText.textContent = architectureData[feature].text;
+            });
+        });
+
+        // Landmark Explorer
+        const landmarkInfoTitle = document.getElementById('landmark-title');
+        const landmarkInfoText = document.getElementById('landmark-text');
+        document.querySelectorAll('[data-landmark]').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const landmark = e.currentTarget.dataset.landmark;
+                landmarkInfoTitle.textContent = landmarkData[landmark].title;
+                landmarkInfoText.textContent = landmarkData[landmark].text;
+            });
+        });
+
+        // Restaurant Filter
+        const restaurantList = document.getElementById('restaurant-list');
+        const filterBtns = document.querySelectorAll('#restaurant-filters .filter-btn');
+
+        const displayRestaurants = (items) => {
+            restaurantList.innerHTML = items.map(item => `
+                <div class="bg-white rounded-lg shadow-md p-4 border border-gray-200">
+                    <h4 class="font-bold">${item.name}</h4>
+                    <p class="text-sm text-gray-600">${item.type}</p>
+                </div>
+            `).join('');
+        };
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const category = e.currentTarget.dataset.category;
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-[#4a69bd]', 'text-white');
+                    b.classList.add('bg-gray-200');
+                });
+                e.currentTarget.classList.add('active', 'bg-[#4a69bd]', 'text-white');
+                e.currentTarget.classList.remove('bg-gray-200');
+
+                const filteredData = (category === 'all') ? restaurantData : restaurantData.filter(item => item.category === category);
+                displayRestaurants(filteredData);
+            });
+        });
+        displayRestaurants(restaurantData);
+
+        // FAQ Accordion
+        const faqContainer = document.getElementById('faq-container');
+        if (faqContainer) {
+            faqContainer.innerHTML = faqData.map((item) => `
+                <div class="accordion-item bg-white rounded-lg shadow-sm border border-gray-200">
+                    <button class="accordion-header w-full text-left p-4 font-semibold flex justify-between items-center">
+                        ${item.question}<span class="accordion-icon text-xl font-bold text-gray-500">+</span>
+                    </button>
+                    <div class="accordion-content"><p class="p-4 pt-0 text-gray-700">${item.answer}</p></div>
+                </div>
+            `).join('');
+            // Re-run accordion logic for this dynamically generated content
+             document.querySelectorAll('#faq-container .accordion-item').forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                const content = item.querySelector('.accordion-content');
+                const icon = item.querySelector('.accordion-icon');
+                header.addEventListener('click', () => {
+                    const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+                    // Close all others
+                    document.querySelectorAll('#faq-container .accordion-content').forEach(i => i.style.maxHeight = '0px');
+                    document.querySelectorAll('#faq-container .accordion-icon').forEach(i => i.textContent = '+');
+                    if (!isOpen) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.textContent = '-';
+                    }
+                });
+            });
+        }
+        
+        // Construction Chart
+        const ctx = document.getElementById('construction-chart').getContext('2d');
+        if(ctx) {
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Choir & Ambulatory', 'Nave', 'Western Facade & Towers', 'Transepts & Spire'],
+                    datasets: [{
+                        label: 'Construction Period (Years)',
+                        data: [21, 56, 40, 28],
+                        backgroundColor: 'rgba(74, 105, 189, 0.7)',
+                        borderColor: 'rgba(74, 105, 189, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) { label += ': '; }
+                                    if (context.parsed.x !== null) {
+                                        const startYear = [1163, 1182, 1200, 1250][context.dataIndex];
+                                        const endYear = startYear + context.parsed.x;
+                                        label += `${context.parsed.x} years (approx. ${startYear} - ${endYear})`;
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: { x: { beginAtZero: true, title: { display: true, text: 'Duration in Years' } } }
+                }
+            });
+        }
     }
 });
