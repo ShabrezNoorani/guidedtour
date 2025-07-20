@@ -239,7 +239,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
-            // Only prevent default for on-page links, not external links or modal triggers
             if (targetId && targetId.startsWith('#') && targetId.length > 1) {
                 e.preventDefault();
                 const mobileMenu = document.getElementById('mobile-menu');
@@ -378,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- CHANGE: Added Meeting Point Modal Logic ---
+    // --- Meeting Point Modal Logic ---
     const meetingPointModal = document.getElementById('meeting-point-modal');
     if (meetingPointModal) {
         const openMeetingModalButtons = document.querySelectorAll('.open-meeting-modal');
@@ -429,4 +428,63 @@ document.addEventListener('DOMContentLoaded', () => {
             document.title = originalTitle;
         }
     });
+
+    // --- Page-Specific JS for blog-post-2.html ---
+    // This code will only run if it finds an element with the class 'timeline'
+    if (document.querySelector('.timeline')) {
+        const windowPanels = document.querySelectorAll('.window-panel');
+        const windowTitle = document.getElementById('window-title');
+        const windowDescription = document.getElementById('window-description');
+        const windowDescBox = document.getElementById('window-description-box');
+        windowPanels.forEach(panel => {
+            panel.addEventListener('click', () => {
+                windowTitle.textContent = panel.dataset.title;
+                windowDescription.textContent = panel.dataset.desc;
+                windowDescBox.style.backgroundColor = panel.dataset.color || 'white';
+            });
+        });
+
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            const content = item.querySelector('.accordion-content');
+            const icon = item.querySelector('.accordion-icon');
+            header.addEventListener('click', () => {
+                const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+                accordionItems.forEach(i => {
+                    i.querySelector('.accordion-content').style.maxHeight = '0px';
+                    i.querySelector('.accordion-icon').textContent = '+';
+                });
+                if (!isOpen) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.textContent = '-';
+                }
+            });
+        });
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const restaurantCards = document.querySelectorAll('.restaurant-card');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                restaurantCards.forEach(card => {
+                    card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
+                });
+            });
+        });
+
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        timelineItems.forEach(item => {
+            observer.observe(item);
+        });
+    }
 });
