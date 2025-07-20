@@ -94,12 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
             private: {
                 title: 'Private Tour Information & Consent',
                 points: [
-                    '<strong>Nature of Tour:</strong> This is an exclusive private walking tour for your group only. The pace is set by you.',
-                    '<strong>Health & Fitness:</strong> Participants should be in good health and able to walk for approximately 60 minutes.',
-                    '<strong>Discount Alert:</strong> The promotional price shown is available only when you book directly and use the discount code at checkout.',
-                    '<strong>Cancellations:</strong> Cancellations made 24 hours before the tour start time will receive a full refund. No refunds for later cancellations or no-shows.',
-                    '<strong>Liability:</strong> Scenic Zest and its guides are not liable for any personal injury or loss of property. Participants are responsible for their own safety.',
-                    '<strong>Photography:</strong> We may take photos for promotional purposes. Please inform your guide if you do not wish to be photographed.'
+                   '<strong>Private Tour:</strong> This is an exclusive walking tour for your group only. The pace is set by you, ensuring a personal experience.',
+'<strong>Sainte-Chapelle Access:</strong> Your tour includes timed, skip-the-line access to Sainte-Chapelle. Your guide will provide a full explanation outside but will not accompany you into the chapel, allowing you to explore its beauty at your own leisure.',
+'<strong>Walking Requirement:</strong> Participants should be in good health and comfortable walking at a moderate pace for the duration of the tour (approx. 2 hours).',
+'<strong>Direct Booking Discount:</strong> The promotional price is available exclusively for bookings made directly on our website.',
+'<strong>Cancellation Policy:</strong> Cancellations made at least 24 hours before the tour start time are eligible for a full refund. No refunds are provided for later cancellations or no-shows.',
+'<strong>Liability:</strong> Participants are responsible for their own safety and personal belongings. Scenic Zest and its guides are not liable for any personal injury or loss of property.',
+'<strong>Photography:</strong> We may take photos during the tour for promotional use. If you prefer not to be photographed, please let your guide know at the beginning of the tour.'
                 ]
             },
             group: {
