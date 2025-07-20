@@ -428,10 +428,9 @@ document.addEventListener('DOMContentLoaded', () => {
             document.title = originalTitle;
         }
     });
-
-    // --- Page-Specific JS for blog-post-2.html ---
-    // This code will only run if it finds an element with the class 'timeline'
-    if (document.querySelector('.timeline')) {
+    
+    // --- Page-Specific JS for blog-post-2.html (Sainte-Chapelle) ---
+    if (document.querySelector('.window-panel')) {
         const windowPanels = document.querySelectorAll('.window-panel');
         const windowTitle = document.getElementById('window-title');
         const windowDescription = document.getElementById('window-description');
@@ -443,7 +442,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 windowDescBox.style.backgroundColor = panel.dataset.color || 'white';
             });
         });
+    }
 
+    // --- Page-Specific JS for blog-post-1.html (Île de la Cité) ---
+    if (document.querySelector('.landmark-panel')) {
+        const landmarkPanels = document.querySelectorAll('.landmark-panel');
+        const landmarkTitle = document.getElementById('landmark-title');
+        const landmarkDescription = document.getElementById('landmark-description');
+        const landmarkDescBox = document.getElementById('landmark-description-box');
+        landmarkPanels.forEach(panel => {
+            panel.addEventListener('click', () => {
+                landmarkTitle.textContent = panel.dataset.title;
+                landmarkDescription.textContent = panel.dataset.desc;
+                landmarkDescBox.style.backgroundColor = panel.dataset.color || 'white';
+            });
+        });
+    }
+
+    // --- Shared JS for Interactive Blog Posts ---
+    if (document.querySelector('.accordion-item')) {
         const accordionItems = document.querySelectorAll('.accordion-item');
         accordionItems.forEach(item => {
             const header = item.querySelector('.accordion-header');
@@ -461,7 +478,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+    }
 
+    if (document.querySelector('.filter-btn')) {
         const filterBtns = document.querySelectorAll('.filter-btn');
         const restaurantCards = document.querySelectorAll('.restaurant-card');
         filterBtns.forEach(btn => {
@@ -474,7 +493,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         });
+    }
 
+    if (document.querySelector('.timeline-item')) {
         const timelineItems = document.querySelectorAll('.timeline-item');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
