@@ -90,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Custom Modal Logic for New Booking Flow ---
     const consentModal = document.getElementById('consent-modal');
     if (consentModal) {
-        // CHANGE: Updated tour details with new cancellation policy and discount info.
         const tourDetails = {
             private: {
                 title: 'Private Tour Information & Consent',
@@ -122,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalPoints = document.getElementById('modal-points');
         const proceedBookingButton = document.getElementById('modal-proceed-booking');
 
-        // When a "Book now" button is clicked...
         openModalButtons.forEach(button => {
             button.addEventListener('click', (e) => {
                 const tourType = button.dataset.tourType;
@@ -130,29 +128,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 const details = tourDetails[tourType];
 
                 if (details && bokunTargetId) {
-                    // 1. Populate the modal with the correct content
                     modalTitle.textContent = details.title;
                     modalPoints.innerHTML = details.points.map(point => `<li>${point}</li>`).join('');
-                    
-                    // 2. Pass the hidden Bokun button's ID to the 'I Agree' button
                     proceedBookingButton.dataset.bokunTargetId = bokunTargetId;
-
-                    // 3. Show the modal
                     consentModal.classList.add('active');
                 }
             });
         });
 
-        // When "I Agree & Proceed" is clicked...
         proceedBookingButton.addEventListener('click', () => {
             const bokunTargetId = proceedBookingButton.dataset.bokunTargetId;
             if (bokunTargetId) {
                 const hiddenBokunButton = document.getElementById(bokunTargetId);
                 if (hiddenBokunButton) {
-                    // Click the real, hidden Bokun button to trigger the widget
                     hiddenBokunButton.click();
                 }
-                // Close the modal
                 consentModal.classList.remove('active');
             }
         });
@@ -169,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
 
     // --- Reviews Slider Logic ---
     const reviewsSlider = document.getElementById('reviews-slider');
@@ -247,22 +236,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Smooth Scrolling for Homepage Anchors ---
-    const pageUrl = window.location.pathname.split('/').pop();
-    if (pageUrl === 'index.html' || pageUrl === '') {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            // Only prevent default for on-page links, not external links or modal triggers
+            if (targetId && targetId.startsWith('#') && targetId.length > 1) {
                 e.preventDefault();
                 const mobileMenu = document.getElementById('mobile-menu');
                 if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                     mobileMenu.classList.add('hidden');
                 }
-                const targetElement = document.querySelector(this.getAttribute('href'));
+                const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
-            });
+            }
         });
-    }
+    });
 
     // --- Promotion Logic ---
     function handlePromotions() {
@@ -388,4 +378,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- CHANGE: Added Meeting Point Modal Logic ---
+    const meetingPointModal = document.getElementById('meeting-point-modal');
+    if (meetingPointModal) {
+        const openMeetingModalButtons = document.querySelectorAll('.open-meeting-modal');
+        const closeMeetingModalButtons = document.querySelectorAll('.close-meeting-modal');
+
+        openMeetingModalButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                meetingPointModal.classList.add('active');
+            });
+        });
+
+        closeMeetingModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                meetingPointModal.classList.remove('active');
+            });
+        });
+
+        meetingPointModal.addEventListener('click', (e) => {
+            if (e.target === meetingPointModal) {
+                meetingPointModal.classList.remove('active');
+            }
+        });
+    }
+
+    // --- Dynamic Title Logic ---
+    let originalTitle = document.title;
+    let titleInterval;
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            const messages = [
+                '😲 Don\'t Miss Out!',
+                '🇫🇷 Book Your Paris Tour!',
+                '🎁 Flat 27% OFF Today!',
+                'We Miss You! 👋'
+            ];
+            let msgIndex = 0;
+            
+            clearInterval(titleInterval);
+
+            titleInterval = setInterval(() => {
+                document.title = messages[msgIndex];
+                msgIndex = (msgIndex + 1) % messages.length;
+            }, 1500);
+        } else {
+            clearInterval(titleInterval);
+            document.title = originalTitle;
+        }
+    });
 });

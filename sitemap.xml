@@ -6,19 +6,23 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
   <loc>https://sceniczest.com/</loc>
-  <lastmod>2025-07-11T14:28:51+00:00</lastmod>
+  <lastmod>2025-07-20T00:42:00+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://sceniczest.com/blog.html</loc>
-  <lastmod>2025-07-11T14:28:51+00:00</lastmod>
+  <lastmod>2025-07-20T00:42:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://sceniczest.com/blog-post-1.html</loc>
-  <lastmod>2025-07-11T14:28:51+00:00</lastmod>
+  <lastmod>2025-07-20T00:42:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-
+<url>
+  <loc>https://sceniczest.com/blog-post-2.html</loc>
+  <lastmod>2025-07-20T00:42:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 
 </urlset>
