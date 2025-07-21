@@ -21,7 +21,7 @@
     <meta name="description"
         content="Discover the soul of Paris with Scenic Zest's expert-led walking tours around Notre Dame. Book a private or small group tour for an unforgettable experience.">
     <meta name="keywords"
-        content="Paris walking tours, Notre Dame tour, guided tours Paris, private tour Paris, scenic zest, Paris tour guide, Île de la Cité tour">
+        content="Paris walking tours, Notre Dame tour, guided tours Paris, private tour Paris, scenic zest, Paris tour guide, Île de la Cité tour, Sainte-Chapelle tour, Crypt tour">
     <link rel="canonical" href="https://sceniczest.com/" />
 
     <meta property="og:type" content="website">
@@ -67,8 +67,16 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Private Outside Notre Dame Walking Tour",
-            "description": "An exclusive tour for you and your group. Explore the magnificent exterior of the cathedral at your own pace."
+            "name": "Private Outside Notre Dame Walking Tour + Entrance to Sainte-Chapelle",
+            "description": "An exclusive tour for you and your group. Explore the magnificent exterior of the cathedral and visit the stunning Sainte-Chapelle."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Private Outside Notre Dame Walking Tour + Entrance to Crypt",
+            "description": "An exclusive tour for you and your group. Explore the magnificent exterior of the cathedral and discover the archaeological crypt."
           }
         },
         {
@@ -151,6 +159,7 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-serif text-center mb-12">Our Guided Tours</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1: Private Tour - Sainte-Chapelle -->
                     <div class="card rounded-lg overflow-hidden shadow-lg tour-card relative" data-original-price="200"
                         data-discount-euros="92">
                         <div class="discount-banner hidden"></div>
@@ -158,11 +167,9 @@
                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/a0522d/FFFFFF?text=Tour+Image';"
                             alt="Gargoyle overlooking Paris from Notre Dame" class="w-full h-56 object-cover">
                         <div class="p-6 card-content">
-                            <div class="card-body">
-                                <h3 class="text-2xl font-serif mb-2">Private Notre Dame Walking Tour + Entrance to
-                                    Sainte-Chapelle or Crypt</h3>
-                                <p class="text-gray-700 mb-4">An exclusive tour for you and your group. Explore the
-                                    magnificent exterior of the cathedral at your own pace.</p>
+                            <div class="card-body flex flex-col">
+                                <h3 class="text-2xl font-serif mb-2">Private Notre Dame Walking Tour + Entrance to Sainte-Chapelle</h3>
+                                <p class="text-gray-700 mb-4 flex-grow">An exclusive tour for you and your group to explore the cathedral's exterior and visit the stunning Sainte-Chapelle.</p>
                                 <div
                                     class="my-4 p-3 rounded-lg bg-gradient-to-r from-yellow-300 to-amber-400 text-gray-800 border-l-4 border-yellow-500 shadow-md rotating-banner">
                                     <p class="font-semibold text-sm text-center">
@@ -203,6 +210,58 @@
                         </div>
                     </div>
 
+                    <!-- Card 2: Private Tour - Crypt -->
+                    <div class="card rounded-lg overflow-hidden shadow-lg tour-card relative" data-original-price="170"
+                        data-discount-euros="78.20">
+                        <div class="discount-banner hidden"></div>
+                        <img src="assets/img/crypt.png"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/a0522d/FFFFFF?text=Tour+Image';"
+                            alt="Archaeological Crypt under Notre Dame" class="w-full h-56 object-cover">
+                        <div class="p-6 card-content">
+                            <div class="card-body flex flex-col">
+                                <h3 class="text-2xl font-serif mb-2">Private Notre Dame Walking Tour + Entrance to CRYPTE</h3>
+                                <p class="text-gray-700 mb-4 flex-grow">Journey beneath the square of Notre Dame to uncover Roman ruins and medieval foundations in the fascinating archaeological crypt.</p>
+                                <div
+                                    class="my-4 p-3 rounded-lg bg-gradient-to-r from-yellow-300 to-amber-400 text-gray-800 border-l-4 border-yellow-500 shadow-md rotating-banner">
+                                    <p class="font-semibold text-sm text-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-1 -mt-1"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 10.586V6z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <strong>Limited Time Offer!</strong>
+                                    </p>
+                                    <p class="text-center text-sm mt-1">Book directly & use code <strong
+                                            class="bg-white px-1.5 py-0.5 rounded text-amber-600 tracking-wider">Private46</strong>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-6 mt-auto">
+                                <span class="text-lg font-medium">1 hr 30 m</span>
+                                <div class="price-display text-right">
+                                    <span class="text-2xl font-bold text-[#4a69bd]">€170 <span
+                                            class="text-base font-normal">/ person</span></span>
+                                </div>
+                            </div>
+                            <button
+                                class="open-custom-modal w-full py-2.5 rounded-lg btn-primary interactive-element select-none"
+                                data-tour-type="private-crypt"
+                                data-bokun-target-id="bokun_c2cea072_5b43_477c_9d32_19b23e7fc82b">
+                                Book now
+                            </button>
+                            <div hidden>
+                                <script type="text/javascript"
+                                    src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=9468be75-021b-4e0a-befb-fa17ddb6e389"
+                                    async></script>
+                                <button class="bokunButton" disabled id="bokun_c2cea072_5b43_477c_9d32_19b23e7fc82b"
+                                    data-src="https://widgets.bokun.io/online-sales/9468be75-021b-4e0a-befb-fa17ddb6e389/experience/1060432?partialView=1"
+                                    data-testid="widget-book-button"> Book now </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Group Tour -->
                     <div class="card rounded-lg overflow-hidden shadow-lg tour-card relative" data-original-price="20"
                         data-discount-euros="5.4">
                         <div class="discount-banner hidden"></div>
@@ -210,10 +269,10 @@
                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/a0522d/FFFFFF?text=Tour+Image';"
                             alt="A group of tourists near Notre Dame" class="w-full h-56 object-cover">
                         <div class="p-6 card-content">
-                            <div class="card-body">
+                            <div class="card-body flex flex-col">
                                 <h3 class="text-2xl font-serif mb-2">
                                     Paris: Notre Dame & Sainte-Chapelle Exterior Walking Tour</h3>
-                                <p class="text-gray-700 mb-4">Join a small group (max 10 adults) to discover the
+                                <p class="text-gray-700 mb-4 flex-grow">Join a small group (max 10 adults) to discover the
                                     history
                                     and beauty of the cathedral's exterior.</p>
                                 <div
@@ -254,18 +313,6 @@
                                     data-testid="widget-book-button"> Book now </button>
                             </div>
                         </div>
-                    </div>
-
-                    <div
-                        class="card rounded-lg overflow-hidden flex flex-col items-center justify-center p-6 text-center bg-gray-50 border-2 border-dashed border-gray-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-                            stroke="#6a89cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                            class="mb-4">
-                            <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" />
-                            <path d="M21 3v5h-5" />
-                        </svg>
-                        <h3 class="text-2xl font-serif mb-2">More Adventures Await</h3>
-                        <p class="text-gray-500">Get ready to explore more of Paris's hidden gems with us.</p>
                     </div>
                 </div>
             </div>
