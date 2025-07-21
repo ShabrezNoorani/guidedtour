@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (effectContainer) {
         // --- UPDATED: Baguette Crumb Trail Effect ---
         let mouseMoveTimer;
-        
+
         const crumbSVGs = [
             `<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#D2B48C"/></svg>`,
             `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 100 60"><ellipse cx="50" cy="30" rx="50" ry="30" fill="#F3E5AB"/></svg>`,
@@ -94,25 +94,26 @@ document.addEventListener('DOMContentLoaded', () => {
             private: {
                 title: 'Private Tour Information & Consent',
                 points: [
-                   '<strong>Private Tour:</strong> This is an exclusive walking tour for your group only. The pace is set by you, ensuring a personal experience.',
-'<strong>Sainte-Chapelle Access:</strong> Your tour includes timed, skip-the-line access to Sainte-Chapelle. Your guide will provide a full explanation outside but will not accompany you into the chapel, allowing you to explore its beauty at your own leisure.',
-'<strong>Walking Requirement:</strong> Participants should be in good health and comfortable walking at a moderate pace for the duration of the tour (approx. 2 hours).',
-'<strong>Direct Booking Discount:</strong> The promotional price is available exclusively for bookings made directly on our website.',
-'<strong>Cancellation Policy:</strong> Cancellations made at least 24 hours before the tour start time are eligible for a full refund. No refunds are provided for later cancellations or no-shows.',
-'<strong>Liability:</strong> Participants are responsible for their own safety and personal belongings. Scenic Zest and its guides are not liable for any personal injury or loss of property.',
-'<strong>Photography:</strong> We may take photos during the tour for promotional use. If you prefer not to be photographed, please let your guide know at the beginning of the tour.'
-                ]
+                    '<strong>Exclusive Experience:</strong> This is a private walking tour reserved for your group only. The pace is set by you, ensuring a personal and flexible experience.',
+                '<strong>Sainte-Chapelle Option:</strong> If you select this option, your tour includes a pre-booked, timed-entry ticket to Sainte-Chapelle. Your guide will provide a full explanation outside but will not accompany you inside, allowing you to explore its beauty at your own leisure.',
+                '<strong>Archaeological Crypt Option:</strong> If you select this option, your tour includes a ticket to the Crypt. Your guide will explain its history from the outside before you enter to explore at your own pace.',
+                '<strong>Walking Requirement:</strong> Participants should be in good health and comfortable walking and standing for the full duration of the tour (approx. 1.5 hours).',
+                '<strong>Direct Booking Discount:</strong> The promotional price is available exclusively for bookings made on our website using the advertised promo code.',
+                '<strong>Cancellation Policy:</strong> Full refund for cancellations made at least 24 hours before the tour start time. No refunds are provided for later cancellations or no-shows.',
+                '<strong>Liability & Safety:</strong> Participants are responsible for their own safety and personal belongings. Scenic Zest is fully insured but is not liable for personal injury or loss of property.',
+                '<strong>Photography Consent:</strong> Photos may be taken for promotional use. Please inform your guide at the start of the tour if you prefer not to be photographed.'
+            ]
             },
             group: {
                 title: 'Group Tour Information & Consent',
                 points: [
-                    '<strong>Nature of Tour:</strong> This is a walking tour with a small group of up to 10 adults. The guide will set a moderate pace for the group.',
-                    '<strong>Health & Fitness:</strong> Participants should be in good health and able to walk for approximately 60 minutes at a moderate pace.',
-                    '<strong>Discount Alert:</strong> The promotional price shown is available only when you book directly and use the discount code at checkout.',
-                    '<strong>Cancellations:</strong> Cancellations made 24 hours before the tour start time will receive a full refund. No refunds for later cancellations or no-shows.',
-                    '<strong>Liability:</strong> Scenic Zest and its guides are not liable for any personal injury or loss of property. Participants are responsible for their own safety.',
-                    '<strong>Photography:</strong> We may take photos for promotional purposes. Please inform your guide if you do not wish to be photographed.'
-                ]
+                '<strong>Small-Group Tour:</strong> This is a walking tour with a small group of up to 10 travelers. Your guide will set a moderate and comfortable pace for everyone.',
+                '<strong>Health & Fitness:</strong> Participants should be in good health and able to walk and stand for the full 1.5-hour duration of the tour.',
+                '<strong>Direct Booking Discount:</strong> The promotional price is available exclusively for bookings made on our website using the advertised promo code at checkout.',
+                '<strong>Cancellation Policy:</strong> Full refund for cancellations made at least 24 hours before the tour start time. No refunds for later cancellations or no-shows.',
+                '<strong>Liability & Safety:</strong> Participants are responsible for their own safety and personal belongings. Scenic Zest is fully insured but is not liable for personal injury or loss of property.',
+                '<strong>Photography Consent:</strong> Photos may be taken for promotional use. Please inform your guide at the start of the tour if you prefer not to be photographed.'
+            ]
             }
         };
 
@@ -206,9 +207,9 @@ document.addEventListener('DOMContentLoaded', () => {
             reviewsSlider.scrollLeft = scrollLeft - walk;
         });
         reviewsSlider.addEventListener('touchstart', (e) => {
-             isDown = true;
-             startX = e.touches[0].pageX - reviewsSlider.offsetLeft;
-             scrollLeft = reviewsSlider.scrollLeft;
+            isDown = true;
+            startX = e.touches[0].pageX - reviewsSlider.offsetLeft;
+            scrollLeft = reviewsSlider.scrollLeft;
         }, { passive: true });
         reviewsSlider.addEventListener('touchmove', (e) => {
             if (!isDown) return;
@@ -291,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formStatus = document.getElementById('form-status');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
+        contactForm.addEventListener('submit', function (event) {
             event.preventDefault();
             const formData = new FormData(contactForm);
             fetch(contactForm.action, {
@@ -316,13 +317,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }).catch(error => {
                 formStatus.innerHTML = "Oops! There was a network problem.";
                 formStatus.style.color = 'red';
-});
+            });
         });
     }
 
     // --- "Work With Us" Modal Logic ---
     const workWithUsModal = document.getElementById('work-with-us-modal');
-    if(workWithUsModal) {
+    if (workWithUsModal) {
         const openWorkModalButton = document.getElementById('work-with-us-button');
         const closeWorkModalButtons = workWithUsModal.querySelectorAll('.close-work-modal-button');
 
@@ -336,10 +337,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 workWithUsModal.classList.remove('active');
             });
         });
-        
+
         workWithUsModal.addEventListener('click', (e) => {
             if (e.target === workWithUsModal) {
-                 workWithUsModal.classList.remove('active');
+                workWithUsModal.classList.remove('active');
             }
         });
     }
@@ -349,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const workFormStatus = document.getElementById('work-form-status');
 
     if (workForm) {
-        workForm.addEventListener('submit', function(event) {
+        workForm.addEventListener('submit', function (event) {
             event.preventDefault();
             const formData = new FormData(workForm);
             fetch(workForm.action, {
@@ -417,7 +418,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'We Miss You! 👋'
             ];
             let msgIndex = 0;
-            
+
             clearInterval(titleInterval);
 
             titleInterval = setInterval(() => {
@@ -429,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.title = originalTitle;
         }
     });
-    
+
     // --- Page-Specific JS for blog-post-1.html (Île de la Cité) & blog-post-2.html (Sainte-Chapelle) ---
     if (document.querySelector('.landmark-panel')) {
         const landmarkPanels = document.querySelectorAll('.landmark-panel');
@@ -491,13 +492,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 restaurantCards.forEach(card => {
                     card.style.display = 'none'; // Hide all first
                     if (filter === 'all' || card.dataset.category.includes(filter)) {
-                         card.style.display = 'block'; // Then show matching
+                        card.style.display = 'block'; // Then show matching
                     }
                 });
             });
         });
     }
-    
+
     // --- Shared Timeline Animation for Blog Posts ---
     if (document.querySelector('.timeline-item')) {
         const timelineItems = document.querySelectorAll('.timeline-item');
@@ -612,7 +613,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `).join('');
             // Re-run accordion logic for this dynamically generated content
-             document.querySelectorAll('#faq-container .accordion-item').forEach(item => {
+            document.querySelectorAll('#faq-container .accordion-item').forEach(item => {
                 const header = item.querySelector('.accordion-header');
                 const content = item.querySelector('.accordion-content');
                 const icon = item.querySelector('.accordion-icon');
@@ -628,10 +629,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         }
-        
+
         // Construction Chart
         const ctx = document.getElementById('construction-chart').getContext('2d');
-        if(ctx) {
+        if (ctx) {
             new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -650,7 +651,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         legend: { display: false },
                         tooltip: {
                             callbacks: {
-                                label: function(context) {
+                                label: function (context) {
                                     let label = context.dataset.label || '';
                                     if (label) { label += ': '; }
                                     if (context.parsed.x !== null) {
