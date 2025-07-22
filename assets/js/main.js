@@ -252,14 +252,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
+            // Check if it's a real anchor and not just "#"
             if (targetId && targetId.startsWith('#') && targetId.length > 1) {
-                e.preventDefault();
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    e.preventDefault();
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             }
@@ -698,6 +699,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (otherItem !== item) {
                         otherItem.querySelector('.faq-content').style.maxHeight = '0px';
                         otherItem.querySelector('.faq-header').classList.remove('active');
+                        otherItem.querySelector('.faq-icon').textContent = '+';
                     }
                 });
 
@@ -705,11 +707,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (isOpen) {
                     content.style.maxHeight = '0px';
                     header.classList.remove('active');
+                    icon.textContent = '+';
                 } else {
                     content.style.maxHeight = content.scrollHeight + 'px';
                     header.classList.add('active');
+                    icon.textContent = '-';
                 }
             });
         });
     }
+
+    // --- Ko-fi Floating Widget Trigger (for nav links on guides.html) ---
+    const kofiNavTriggers = [
+        document.getElementById('tip-us-link-desktop'),
+        document.getElementById('tip-us-link-mobile')
+    ];
+
+    const triggerKofi = (e) => {
+        e.preventDefault();
+        if (typeof kofiWidgetOverlay !== 'undefined') {
+            kofiWidgetOverlay.toggle();
+        }
+    };
+
+    kofiNavTriggers.forEach(trigger => {
+        if (trigger) {
+            trigger.addEventListener('click', triggerKofi);
+        }
+    });
 });
