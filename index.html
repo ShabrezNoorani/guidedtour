@@ -90,6 +90,78 @@
       ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I book a tour?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The easiest way to book is directly through our website. Simply choose your desired tour, click the 'Book Now' button, and follow the steps. Booking online is required to secure your spot and benefit from any direct-booking discounts."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is your cancellation policy?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We offer a full refund for cancellations made at least 24 hours before the scheduled tour start time. Unfortunately, we cannot provide refunds for cancellations made within 24 hours of the tour or for no-shows."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where is the meeting point?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our meeting point is next to the large equestrian statue of Charlemagne, which is located in the square (Parvis) in front of Notre Dame Cathedral. Your guide will be holding a sign with the 'SZ' (Scenic Zest) logo."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens if it rains?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our tours run rain or shine! Paris is beautiful in all weather. We recommend checking the forecast and dressing appropriately. Please bring an umbrella or raincoat if precipitation is expected."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are entrance tickets included in the tour price?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, for our tours that include a visit to Sainte-Chapelle or the Archaeological Crypt, the price includes a pre-booked, timed-entry ticket for that specific monument."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the best way to get around Paris?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Paris Métro is the most efficient way to travel long distances. For shorter distances, walking is a fantastic way to see the city. Buses are also a great option for scenic routes. For convenience, ride-sharing apps and taxis are readily available."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is tipping customary in Paris?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "In restaurants, the service charge ('service compris') is already included in your bill by law. However, it is common to leave a small extra tip (a few euros or rounding up the bill) for excellent service. For tour guides, a tip of 10-15% is greatly appreciated if you enjoyed your experience."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I drink the tap water in Paris?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely! The tap water in Paris is perfectly safe to drink and of high quality. You can ask for a 'carafe d'eau' (a pitcher of tap water) for free in any restaurant."
+                }
+            }
+        ]
+    }
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -117,6 +189,7 @@
                 <a href="#why-us" class="text-lg nav-link interactive-element select-none">Why Us</a>
                 <a href="#reviews" class="text-lg nav-link interactive-element select-none">Reviews</a>
                 <a href="blog.html" class="text-lg nav-link interactive-element select-none">Blog</a>
+                <a href="#faq" class="text-lg nav-link interactive-element select-none">FAQ</a>
                 <a href="#contact" class="text-lg nav-link interactive-element select-none">Contact</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-2xl interactive-element select-none">
@@ -134,6 +207,7 @@
             <a href="#why-us" class="block py-2 text-lg interactive-element select-none">Why Us</a>
             <a href="#reviews" class="block py-2 text-lg interactive-element select-none">Reviews</a>
             <a href="blog.html" class="block py-2 text-lg interactive-element select-none">Blog</a>
+            <a href="#faq" class="block py-2 text-lg interactive-element select-none">FAQ</a>
             <a href="#contact" class="block py-2 text-lg interactive-element select-none">Contact</a>
         </div>
     </header>
@@ -159,7 +233,6 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-serif text-center mb-12">Our Guided Tours</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Card 1: Private Tour - Sainte-Chapelle -->
                     <div class="card rounded-lg overflow-hidden shadow-lg tour-card relative" data-original-price="200"
                         data-discount-euros="92">
                         <div class="discount-banner hidden"></div>
@@ -210,7 +283,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 2: Private Tour - Crypt -->
                     <div class="card rounded-lg overflow-hidden shadow-lg tour-card relative" data-original-price="170"
                         data-discount-euros="78.20">
                         <div class="discount-banner hidden"></div>
@@ -261,7 +333,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 3: Group Tour -->
                     <div class="card rounded-lg overflow-hidden shadow-lg tour-card relative" data-original-price="20"
                         data-discount-euros="5.4">
                         <div class="discount-banner hidden"></div>
@@ -501,7 +572,172 @@
                 </div>
             </div>
         </section>
-    </main>
+
+        <section id="faq" class="py-12 md:py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-serif text-center mb-12">Frequently Asked Questions</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-6xl mx-auto">
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-serif mb-4 text-[#4a69bd]">About Our Tours</h3>
+                        <div class="faq-item">
+                            <button class="faq-header">How do I book a tour?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>The easiest way to book is directly through our website. Simply choose your desired tour, click the 'Book Now' button, and follow the steps. Booking online is required to secure your spot and benefit from any direct-booking discounts.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">What is your cancellation policy?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>We offer a full refund for cancellations made at least 24 hours before the scheduled tour start time. Unfortunately, we cannot provide refunds for cancellations made within 24 hours of the tour or for no-shows.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">Where is the meeting point?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>Our meeting point is next to the large equestrian statue of Charlemagne, which is located in the square (Parvis) in front of Notre Dame Cathedral. Click on "Meeting Point" in the menu for more details.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">How will I recognize my guide?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>Your guide will be easy to spot! They will be standing at the meeting point holding a sign with the blue and white "SZ" (Scenic Zest) logo.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">What should I do if I'm running late?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>Please try to arrive 5-10 minutes early. If you are running late, please call the number provided in your confirmation email. Guides will wait for a few minutes, but cannot hold the group for long. We cannot offer refunds for late arrivals.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">How large are the group tours?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>We keep our group tours small and intimate to ensure a quality experience. The maximum size is 10 adults, allowing for easy interaction with your guide.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">Are entrance tickets (Sainte-Chapelle, Crypt) included?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>Yes, for our tours that include a visit to Sainte-Chapelle or the Archaeological Crypt, the price includes a pre-booked, timed-entry ticket for that specific monument.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">Does the guide go inside Sainte-Chapelle with us?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>Your guide provides a full, detailed explanation of Sainte-Chapelle's history and architecture from the outside. They will not accompany you inside, allowing you to immerse yourself in its beauty at your own pace without the constraints of a group.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">What happens if it rains?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>Our tours run rain or shine! Paris is beautiful in all weather. We recommend checking the forecast and dressing appropriately. Please bring an umbrella or raincoat if precipitation is expected.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">Is the tour suitable for children?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>Children are welcome! Private tours are ideal for families as the pace can be adapted. For group tours, please consider if your child is comfortable with a 1.5-hour walking tour focused on history.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">Is the walking tour wheelchair accessible?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>The general walking route is on paved, mostly flat surfaces. However, the historic streets of Paris can have cobblestones and uneven patches. Please contact us in advance to discuss specific accessibility needs.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">What language are the tours conducted in?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>All our scheduled tours are conducted in English by a fluent, expert guide.</p>
+                            </div>
+                        </div>
+                         <div class="faq-item">
+                            <button class="faq-header">Can I book a custom private tour?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>Yes! We are happy to create a custom itinerary for you. Please use the contact form to send us your request, and we will work with you to design your perfect Paris experience.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-serif mb-4 text-[#4a69bd]">Paris Travel Tips</h3>
+                        <div class="faq-item">
+                            <button class="faq-header">What is the best way to get around Paris?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>The Paris Métro is the most efficient way to travel long distances. For shorter distances, walking is a fantastic way to see the city. Buses offer scenic routes, and ride-sharing apps/taxis are also available.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">Do I need to speak French?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>It is not necessary, as many people in the tourism industry speak English. However, learning a few basic phrases like 'Bonjour' (Hello), 'Merci' (Thank you), and 'Au revoir' (Goodbye) is highly appreciated and will make your interactions more pleasant.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">Is tipping customary in Paris?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>In restaurants, a service charge ('service compris') is already included. However, it's common to leave a few extra euros for excellent service. For tour guides, a tip is a wonderful way to show your appreciation if you enjoyed the experience.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">Can I drink the tap water?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>Absolutely! Tap water in Paris is perfectly safe and high quality. You can ask for a 'carafe d'eau' (pitcher of tap water) for free in any restaurant, and there are public water fountains (Fontaines Wallace) all over the city.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">What kind of power adapter do I need?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>France uses the Type E plug, which has two round pins and a round earth pin. The standard voltage is 230V. If you are coming from a country with a different voltage (like the US at 120V), ensure your device is dual-voltage or bring a converter.</p>
+                            </div>
+                        </div>
+                         <div class="faq-item">
+                            <button class="faq-header">Are stores open on Sundays?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>Many smaller shops and boutiques are closed on Sundays. However, in major tourist areas like the Marais, Champs-Élysées, and Montmartre, you will find many stores open. Most large department stores and grocery stores are also open, often with reduced hours.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">What is the "Bonjour" rule?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>In France, it's considered polite to always greet the staff with 'Bonjour' (or 'Bonsoir' in the evening) upon entering a shop, café, or bakery. It's a small but very important cultural courtesy.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">Is Paris a safe city for tourists?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>Paris is generally a safe city. However, like any major city, it's important to be aware of your surroundings. Pickpocketing is the most common crime, so keep your valuables secure, especially in crowded areas and on public transport.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">Should I carry cash or are credit cards widely accepted?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>Credit cards (especially Visa and Mastercard with a chip and PIN) are widely accepted. However, it's always a good idea to have some cash (Euros) for small purchases at bakeries, street markets, or for leaving a small tip.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">How do I use the Paris Métro?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>You can buy single tickets or a book of ten ('carnet') from machines in the station. A pass like the Navigo Découverte might be cost-effective for longer stays. Plan your route using maps in the station or apps like Citymapper or Google Maps. Keep your ticket until you exit the station.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">Are museums free for children?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>Yes, permanent collections in national museums (like the Louvre, Musée d'Orsay, Centre Pompidou) are free for all visitors under 18, and for EU residents under 26. Special exhibitions may still require a ticket.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-header">What is the emergency number in France?<span class="faq-icon">+</span></button>
+                            <div class="faq-content">
+                                <p>The pan-European emergency number is 112, which can be dialed from any phone to reach police, fire, or medical services. Other specific numbers are 15 (medical), 17 (police), and 18 (fire).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
 
     <footer id="contact" class="bg-[#1a202c] text-white py-16">
         <div class="container mx-auto px-6">
@@ -524,6 +760,8 @@
                             class="hover:text-white transition interactive-element w-fit select-none">Reviews</a>
                         <a href="blog.html"
                             class="hover:text-white transition interactive-element w-fit select-none">Blog</a>
+                         <a href="#faq"
+                            class="hover:text-white transition interactive-element w-fit select-none">FAQ</a>
                         <a href="#" id="work-with-us-button"
                             class="hover:text-white transition interactive-element w-fit select-none">Work with
                             us</a>
