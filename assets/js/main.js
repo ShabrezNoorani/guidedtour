@@ -94,6 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
             private: {
                 title: 'Private Sainte-Chapelle Tour Information & Consent',
                 points: [
+                    '<strong>* Promotion</strong> only applies to selected days and times. Please check the booking page for availability.',
+                    '<strong>Promo Code</strong> Kindly use promo code at checkout to avail the discount(if applicable).',
                     '<strong>Exclusive Experience:</strong> This is a private walking tour reserved for your group only. The pace is set by you, ensuring a personal and flexible experience.',
                     '<strong>Sainte-Chapelle Entry:</strong> Your tour includes a pre-booked, timed-entry ticket to Sainte-Chapelle. Your guide will provide a full explanation outside but will not accompany you inside, allowing you to explore its beauty at your own leisure.',
                     '<strong>Walking Requirement:</strong> Participants should be in good health and comfortable walking and standing for the full duration of the tour (approx. 1.5 hours).',
@@ -106,6 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'private-crypt': {
                 title: 'Private Crypt Tour Information & Consent',
                 points: [
+                    '<strong>* Promotion</strong> only applies to selected days and times. Please check the booking page for availability.',
+                    '<strong>Promo Code</strong> Kindly use promo code at checkout to avail the discount(if applicable).',
                     '<strong>Exclusive Experience:</strong> This is a private walking tour reserved for your group only. The pace is set by you, ensuring a personal and flexible experience.',
                     '<strong>Archaeological Crypt Entry:</strong> Your tour includes a pre-booked ticket to the Archaeological Crypt beneath the Notre Dame square. Your guide will explain its history from the outside before you enter to explore at your own pace.',
                     '<strong>Walking Requirement:</strong> Participants should be in good health and comfortable walking and standing for the full duration of the tour (approx. 1.5 hours).',
@@ -118,6 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
             group: {
                 title: 'Group Tour Information & Consent',
                 points: [
+                '<strong>* Promotion</strong> only applies to selected days and times. Please check the booking page for availability.',
+                '<strong>Promo Code</strong> Kindly use promo code at checkout to avail the discount(if applicable).',
                 '<strong>Small-Group Tour:</strong> This is a walking tour with a small group of up to 10 travelers. Your guide will set a moderate and comfortable pace for everyone.',
                 '<strong>Health & Fitness:</strong> Participants should be in good health and able to walk and stand for the full 1.5-hour duration of the tour.',
                 '<strong>Direct Booking Discount:</strong> The promotional price is available exclusively for bookings made on our website using the advertised promo code at checkout.',
