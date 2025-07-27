@@ -528,7 +528,7 @@ body {
 }
 
 .window-description-box {
-    transition: background-color: 0.5s ease;
+    transition: background-color 0.5s ease;
 }
 
 @media screen and (max-width: 768px) {
@@ -726,4 +726,43 @@ body {
 #kofi-floating-chat-widget-container {
     bottom: 75px !important;
     right: 15px !important;
+}
+/* Social Icon Styles in Footer */
+.social-icon svg {
+    height: 24px;
+    width: 24px;
+    fill: #a0aec0; /* gray-400 */
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover svg {
+    fill: #ffffff; /* white on hover */
+    transform: scale(1.15);
+}
+/* Floating WhatsApp Button */
+#floating-whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366; /* Official WhatsApp Green */
+    color: #FFF;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#floating-whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+#floating-whatsapp-btn svg {
+    width: 32px;
+    height: 32px;
 }
