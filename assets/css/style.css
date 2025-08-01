@@ -747,8 +747,8 @@ body {
 /* Floating WhatsApp Button */
 #floating-whatsapp-btn {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 18px;
+    left: 25px;
     background-color: #25D366; /* Official WhatsApp Green */
     color: #FFF;
     width: 60px;
