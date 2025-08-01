@@ -449,7 +449,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Page-Specific JS for blog-post-1.html (Île de la Cité) & blog-post-2.html (Sainte-Chapelle) ---
+    // --- Page-Specific JS for ile-de-la-cite.html (Île de la Cité) & sainte-chapelle.html (Sainte-Chapelle) ---
     if (document.querySelector('.landmark-panel')) {
         const landmarkPanels = document.querySelectorAll('.landmark-panel');
         const landmarkTitle = document.getElementById('landmark-title');
@@ -532,7 +532,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Page-Specific JS for blog-post-3.html (Notre Dame Guide) ---
+    // --- Page-Specific JS for notre-dame-et-l-ile-de-la-cite.html (Notre Dame Guide) ---
     if (document.getElementById('construction-chart')) {
 
         const architectureData = {
