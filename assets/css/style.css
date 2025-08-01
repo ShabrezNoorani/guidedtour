@@ -430,6 +430,7 @@ body {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
 }
 
 /* --- Blog Post 1 & 2 Specific Styles --- */
