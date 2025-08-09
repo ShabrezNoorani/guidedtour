@@ -375,6 +375,7 @@ body {
 
 /* Bokun Button Styles */
 #bokun_ddac3360_b6ce_498e_ac1a_b5ac3206f5cf,
+#bokun_d20df2ac_a831_438e_a00c_df8d93fe168d,
 #bokun_e99b5111_1d6e_4986_bbef_778cd5b6d5a1 {
     display: block;
     width: 100%;
@@ -393,6 +394,7 @@ body {
 }
 
 #bokun_ddac3360_b6ce_498e_ac1a_b5ac3206f5cf:hover,
+#bokun_d20df2ac_a831_438e_a00c_df8d93fe168d:hover,
 #bokun_e99b5111_1d6e_4986_bbef_778cd5b6d5a1:hover {
     background: #6a89cc;
     transform: translateY(-2px);
@@ -400,10 +402,12 @@ body {
 }
 
 #bokun_ddac3360_b6ce_498e_ac1a_b5ac3206f5cf:active,
+#bokun_d20df2ac_a831_438e_a00c_df8d93fe168d:active,
 #bokun_e99b5111_1d6e_4986_bbef_778cd5b6d5a1:active {
     background: #39539b;
     transform: translateY(0);
 }
+
 
 /* --- Blog Page Redesign Styles --- */
 .blog-card {

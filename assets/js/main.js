@@ -122,15 +122,17 @@ document.addEventListener('DOMContentLoaded', () => {
             group: {
                 title: 'Group Tour Information & Consent',
                 points: [
-                '<strong>* Promotion</strong> only applies to selected days and times. Please check the booking page for availability.',
-                '<strong>Promo Code</strong> Kindly use promo code at checkout to avail the discount(if applicable).',
-                '<strong>Small-Group Tour:</strong> This is a walking tour with a small group of up to 10 travelers. Your guide will set a moderate and comfortable pace for everyone.',
-                '<strong>Health & Fitness:</strong> Participants should be in good health and able to walk and stand for the full 1.5-hour duration of the tour.',
-                '<strong>Direct Booking Discount:</strong> The promotional price is available exclusively for bookings made on our website using the advertised promo code at checkout.',
-                '<strong>Cancellation Policy:</strong> Full refund for cancellations made at least 24 hours before the tour start time. No refunds for later cancellations or no-shows.',
-                '<strong>Liability & Safety:</strong> Participants are responsible for their own safety and personal belongings. Scenic Zest is fully insured but is not liable for personal injury or loss of property.',
-                '<strong>Photography Consent:</strong> Photos may be taken for promotional use. Please inform your guide at the start of the tour if you prefer not to be photographed.'
-            ]
+                    '<strong>* Promotion</strong> only applies to selected days and times. Please check the booking page for availability.',
+                    '<strong>Promo Code</strong> Kindly use promo code at checkout to avail the discount(if applicable).',
+                    '<strong>Small-Group Tour:</strong> This is a walking tour with a small group of travelers. Your guide will set a moderate and comfortable pace for everyone.',
+                    '<strong>Archaeological Crypt Entry(if selected):</strong> Your tour includes a pre-booked ticket to the Archaeological Crypt beneath the Notre Dame square. Your guide will explain its history from the outside before you enter to explore at your own pace.',
+                    '<strong>Sainte-Chapelle Entry (if selected):</strong> Your tour includes a pre-booked, timed-entry ticket to Sainte-Chapelle. Your guide will provide a full explanation outside but will not accompany you inside, allowing you to explore its beauty at your own leisure.',
+                    '<strong>Health & Fitness:</strong> Participants should be in good health and able to walk and stand for the full 1.5-hour duration of the tour.',
+                    '<strong>Direct Booking Discount:</strong> The promotional price is available exclusively for bookings made on our website using the advertised promo code at checkout.',
+                    '<strong>Cancellation Policy:</strong> Full refund for cancellations made at least 24 hours before the tour start time. No refunds for later cancellations or no-shows.',
+                    '<strong>Liability & Safety:</strong> Participants are responsible for their own safety and personal belongings. Scenic Zest is fully insured but is not liable for personal injury or loss of property.',
+                    '<strong>Photography Consent:</strong> Photos may be taken for promotional use. Please inform your guide at the start of the tour if you prefer not to be photographed.'
+                ]
             }
         };
 
